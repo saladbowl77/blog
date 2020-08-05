@@ -31,7 +31,7 @@ Barba.Dispatcher.on( 'newPageReady', function( currentStatus, oldStatus, contain
         newPageRawHead = newPageRawHTML.match( /<head[^>]*>([\s\S.]*)<\/head>/i )[ 0 ],
         newPageHead = document.createElement( 'head' );
     newPageHead.innerHTML = newPageRawHead;
-    var headTags = [ 
+    var headTags = [
         "meta[name='keywords']",
         "meta[name='description']",
         "meta[property^='og']",
@@ -53,8 +53,10 @@ Barba.Dispatcher.on( 'newPageReady', function( currentStatus, oldStatus, contain
     }
 });
 Barba.Dispatcher.on('newPageReady', function () {
+  if (location.pathname == '/'){
     var el = document.createElement("script");
     el.src = "/js/blog.js";
     document.body.appendChild(el);
+  }
 });
 Barba.Pjax.start();
