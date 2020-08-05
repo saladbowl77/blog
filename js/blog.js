@@ -27,6 +27,5 @@ function createArray(csvData) {
       bl.appendChild(bl_e);
       var blogHTML = `<img src="${csv_dataArray[2]}img/thumbnail.png" alt="${csv_dataArray[1]}のサムネイル"><h3>${csv_dataArray[1]}</h3><p class="date">${csv_dataArray[3]}</p>`
       bl_e.insertAdjacentHTML('afterbegin', blogHTML);
-      console.log(csv_dataArray);
     }
 }

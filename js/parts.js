@@ -15,7 +15,7 @@ xhrh.open(method, url, true);
 xhrh.onreadystatechange = function () {
   if(xhrh.readyState === 4 && xhrh.status === 200) {
     var restxt=xhrh.responseXML;
-    var int=restxt.getElementsByTagName("header")[0];
+    var int = restxt.getElementsByTagName("header")[0];
     header.innerHTML=int.outerHTML;
   }
 };
@@ -25,8 +25,8 @@ xhrb.open(method, url, true);
 xhrb.onreadystatechange = function () {
   if(xhrb.readyState === 4 && xhrb.status === 200) {
     var restxt=xhrb.responseXML;
-    var int=restxt.getElementById("bottom_menu");
-    footer.innerHTML=int.outerHTML;
+    var int = restxt.getElementById("bottom_menu_wrap");
+    bottom_menu_wrap.innerHTML = int.outerHTML;
   }
 };
 xhrb.send();
@@ -35,7 +35,7 @@ xhrf.open(method, url, true);
 xhrf.onreadystatechange = function () {
   if(xhrf.readyState === 4 && xhrf.status === 200) {
     var restxt=xhrf.responseXML;
-    var int=restxt.getElementsByTagName("footer")[0];
+    var int = restxt.getElementsByTagName("footer")[0];
     footer.innerHTML=int.outerHTML;
   }
 };

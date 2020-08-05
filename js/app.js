@@ -1,29 +1,62 @@
 var main = document.getElementsByTagName("main")[0];
-var ShutterAnimation = Barba.BaseTransition.extend({
-  start: function() {
-    this.shutter(300)
-      .then(this.newContainerLoading)
-      .then(this.finish.bind(this));
-  },
-  shutter: function(timer) {
-    return new Promise( function (resolve) {
-      main.classList.toggle('moved');
-      setTimeout(function () {
-      main.classList.toggle('moved');
-        resolve();
-      }, timer);
-
-    });
-  },
-  finish: function() {
-    document.body.scrollTop = 0;
-    this.done();
-  }
+const replaceHeadTags = target => {
+  const head = document.head
+  const targetHead = target.html.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0]
+  const newPageHead = document.createElement('head')
+  newPageHead.innerHTML = targetHead
+  const removeHeadTags = [
+    "meta[name='keywords']",
+    "meta[name='description']",
+    "meta[property^='fb']",
+    "meta[property^='og']",
+    "meta[name^='twitter']",
+    "meta[name='robots']",
+    'meta[itemprop]',
+    'link[itemprop]',
+    "link[rel='prev']",
+    "link[rel='next']",
+    "link[rel='canonical']",
+  ].join(',')
+  const headTags = [...head.querySelectorAll(removeHeadTags)]
+  headTags.forEach(item => {
+    head.removeChild(item)
+  })
+  const newHeadTags = [...newPageHead.querySelectorAll(removeHeadTags)]
+  newHeadTags.forEach(item => {
+    head.appendChild(item)
+  })
+}
+barba.init({
+  transitions: [
+    {
+      async leave() {
+        main.classList.add('moved');
+        await new Promise(resolve => {
+          return setTimeout(resolve, 600);
+        });
+      },
+      afterEnter() {
+        main.classList.remove('moved');
+        if (location.pathname == '/'){
+          const blog = document.createElement("script");
+          blog.src = "/js/blog.js";
+          document.body.appendChild(blog);
+        }
+        if (location.pathname.slice(0,5) == '/blog'){
+          const parts = document.createElement("script");
+          parts.src = "/js/parts.js";
+          document.body.appendChild(parts);
+        }
+      },
+      beforeEnter({ next }) {
+        replaceHeadTags(next)
+      }
+    }
+  ]
 });
-Barba.Pjax.getTransition = function() {
-  var namespace = Barba.HistoryManager.prevStatus().namespace;
-  return ShutterAnimation;
-};
+barba.use(barbaCss);
+barba.init();
+/*
 Barba.Dispatcher.on( 'newPageReady', function( currentStatus, oldStatus, container, newPageRawHTML ) {
     if ( Barba.HistoryManager.history.length === 1 ) {
         return;
@@ -60,4 +93,6 @@ Barba.Dispatcher.on('newPageReady', function () {
     document.body.appendChild(el);
   }
 });
+
 Barba.Pjax.start();
+*/

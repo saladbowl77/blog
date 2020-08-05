@@ -9,6 +9,7 @@
   <meta property="og:url" content="https://blog.saladbowl.work">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="さらいふ">
+  <meta property="og:site_name" content="さらいふ">
   <meta property="og:image" content="/img/page.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@saladbowl_sub">
@@ -17,7 +18,6 @@
   <meta name="twitter:description" content="にわかプログラマーのさらだぼぉるが日々習得したことなどアウトプットしているふるゆわ系ブログ">
   <meta name="twitter:image" content="https://blog.saladbowl.work/img/page.png">
   <link rel="stylesheet" href="https://unpkg.com/modern-css-reset-plus-tool/dist/reset.min.css">
-  <link rel="stylesheet" href="/style.css">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="さらいふ">
@@ -29,19 +29,19 @@
   <!-- スマホ用アイコン -->
   <link rel="apple-touch-icon" type="image/png" href="icon/apple-touch-icon-180x180.png">
   <link rel="icon" type="image/png" href="icon/icon-192x192.png">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <header></header>
-<main id="barba-wrapper">
-  <div class="barba-container"  data-namespace="top_page">
-    <div id="blog_list">
-    </div>
+<main data-barba="wrapper">
+  <div class="container" data-barba="container" data-namespace="top_page">
+    <div id="blog_list"></div>
   </div>
 </main>
 <footer></footer>
-<script src="/js/parts.js"></script>
-<script src="https://unpkg.com/@barba/core"></script>
+<script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.6/dist/barba.umd.min.js" crossOrigin></script>
 <script src="/js/app.js"></script>
-<script src="/js/serviceWorker.js"></script>
+<script src="/js/parts.js"></script>
+<script src="/js/blog.js"></script>
 </body>
 </html>
