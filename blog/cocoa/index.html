@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+  <meta charset="UTF-8">
+  <title>Saladbowl Blog</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="description" content="にわかプログラマーのさらだぼぉるが日々習得したことなどアウトプットしているふるゆわ系ブログを始めたよ">
+  <meta property="og:url" content="https://blog.saladbowl.work/blog/cocoa">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="さらいふ">
+  <meta property="og:image" content="/blog/cocoa/img/thumbnail.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@saladbowl_sub">
+  <meta name="twitter:creator" content="@saladbowl_sub">
+  <meta name="twitter:title" content="さらいふ">
+  <meta name="twitter:description" content="にわかプログラマーのさらだぼぉるが日々習得したことなどアウトプットしているふるゆわ系ブログを始めたよ">
+  <meta name="twitter:image" content="https://blog.saladbowl.work/blog/cocoa/img/thumbnail.png">
+  <link rel="stylesheet" href="https://unpkg.com/modern-css-reset-plus-tool/dist/reset.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header></header>
+<main id="barba-wrapper">
+  <div class="barba-container">
+    <div id="title_data">
+      <div id="title_text">
+			  <h1>厚生労働省のコロナ追跡アプリについて解説するよ</h1>
+        <p id="tags" class="icon icon-tags"><span>その他</span>
+        <span>HTML</span>
+        </p>
+        <p id="upload_date" class="icon icon-clock">2020/08/5</p>
+      </div>
+      <img src="./img/thumbnail.png" alt="">
+    </div>
+    <div id="blog_main">
+      <p>皆さんこんにちは。さらだぼぉるです。今回は6月19日の15:00にリリースされた厚生労働省の接触確認アプリについてのお話です。
+      最新の仕組みを利用しているというだけあって目が離せませんね。どのような仕組みなのかまとめてみました。</p>
+      <h2>COCOAとは</h2>
+      <p>COCOAとは厚生労働省が開発した新型コロウィルス感染症の接触確認アプリの名称。6/19の15:00にリリースされた。</p>
+      <h2>仕組み</h2>
+      <p>これはAppleとGoogleが提携して開発した接触追跡APIを利用して開発されている模様。(<a href="https://nr.apple.com/d2s4e383A2">Appleのニュースリリース</a>)。
+        詳しくは<a href="https://www.apple.com/covid19/contacttracing/">これ</a>をみて頂きたい。ただし全て英語なのでめんどくさい方は読むのをやめといた方がいい。</p>
+      <p>実際にどのような流れで識別するのか厚生労働相の発表記事を基にまとめた。(発表記事は <a href="https://cio.go.jp/sites/default/files/uploads/documents/techteam_20200526_01.pdf">こちら</a>)</p>
+      <p>発表資料によると、以下の図のような流れになるそうだ。</p>
+      <img src="http://drive.google.com/uc?export=view&amp;id=1Y9jCQ1udb5E8TQL_4MZJb3vk4beud_nQ" alt="">
+      <p>接触した場合互いに暗号化されたキーが渡される。(画像ではKeyAAAAAAAとなっている部分)
+        この時接触の定義とは1m 以内の距離で継続し て 15 分以上の継続的な近接状態(案)だそうです。(資料より)
+        もし青い服の人がコロナにかかった場合病院で処理番号を発行します。ここまでが1枚目です。</p>
+      <img src="http://drive.google.com/uc?export=view&amp;id=1ORJ7wg73lVG6FaJS1TCaCsDdrS2N1PES" alt="">
+      <p>2枚目です。少しみづらくてすみません。コロナであったことを報告する場合はアプリ内の陽性情報の登録から申請します。(下部画像)</p>
+      <img src="http://drive.google.com/uc?export=view&amp;id=19xFDkd0txVJCqCIBKlF9d3w19ShqvdX3" alt="">
+      <p>そのキーが本物かということをサーバーで検知し、正式かどうかというものをアプリに送信します。この時サーバーから端末に送信された時trueであれば次の処理が始まりfaultであればエラーメッセージを表示するようになっている。
+        trueだった場合バックエンド処理として通知サーバーに送信されるという仕組みになっている。
+        そして２週間以内に接触した人に通知がいくようになっています。この時個人の特定ができるような情報は送信しないという。</p>
+      <h2>実際にアプリを使ってみた感想</h2>
+      <p>このアプリを触って感じたことは全体的にデザインが見やすい(当たり前)という点と、HTMLやJavaScript.CSSなどを使ってアプリを作るハイブリットアプリっぽい感じがしました。
+        全体的なUIの感じや動作の感じを見ているとハイブリットアプリなのかな？と思ってしまいます。またAndroid iOS両対応ということでこちらの方が効率が良いのではないのかと思ったりもします。
+        ただ追跡のAPIがハイブリットアプリでも使えるのかが不明なので言い切ることはできません</p>
+      <h2>セキュリティ</h2>
+      <p>セキュリティについては専門家では無いので正確な話はできませんが、アプリほぼ全てのシステムをAppleやGoogleの作った仕組みを利用していおり、基本OSベースであると資料にも載っているので情報漏洩などの可能性は低いのでは無いかと思います。</p>
+      <h2>僕たちにできること</h2>
+      <p>このコロナ追跡アプリは現在GitHubにてソースコードが公開されています。<a href="https://qiita.com/">Qiita</a>で少し有名になった記事の<a href="https://qiita.com/Anharu/items/c00e882d678538be0ab0">JKが接触確認アプリ「Cocoa」の開発に貢献した話。〜1日でXamarinを学びアプリ改善〜</a>という記事を見た人も多いのではないでしょうか。ぜひそちらの記事も見てみてください。この記事を書いた<a href="https://twitter.com/_anharu">あんはる@アプリ作れるJK</a>さんはとてもすごいのでぜひ一度覗いてみてください。</p>
+      <h2>まとめ</h2>
+      <p>以上、よわよわプログラマーによる厚生労働省コロナ追跡アプリについての簡単なご紹介でした。何かここが違うなどありましたら、僕のTwitterのDMまで押しかけてきてください。記事に反映させて頂きます。</p>
+      <h2>追記</h2>
+      <p>この記事は<a href="leiwasoft.com">Leiwasoft</a>に所属していたときに執筆した<a href="https://blog.lis.burur.co/viewpost.php?q=45">厚生労働省のコロナ追跡アプリについて解説するよ</a>に加筆修正を加えたものです。</p>
+    </div>
+  </div>
+</main>
+<footer></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/parts.js"></script>
+</body>
+</html>
