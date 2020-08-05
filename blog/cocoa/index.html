@@ -42,13 +42,13 @@
         詳しくは<a href="https://www.apple.com/covid19/contacttracing/">これ</a>をみて頂きたい。ただし全て英語なのでめんどくさい方は読むのをやめといた方がいい。</p>
       <p>実際にどのような流れで識別するのか厚生労働相の発表記事を基にまとめた。(発表記事は <a href="https://cio.go.jp/sites/default/files/uploads/documents/techteam_20200526_01.pdf">こちら</a>)</p>
       <p>発表資料によると、以下の図のような流れになるそうだ。</p>
-      <img src="http://drive.google.com/uc?export=view&amp;id=1Y9jCQ1udb5E8TQL_4MZJb3vk4beud_nQ" alt="">
+      <img src="./img/page1.png" alt="">
       <p>接触した場合互いに暗号化されたキーが渡される。(画像ではKeyAAAAAAAとなっている部分)
         この時接触の定義とは1m 以内の距離で継続し て 15 分以上の継続的な近接状態(案)だそうです。(資料より)
         もし青い服の人がコロナにかかった場合病院で処理番号を発行します。ここまでが1枚目です。</p>
-      <img src="http://drive.google.com/uc?export=view&amp;id=1ORJ7wg73lVG6FaJS1TCaCsDdrS2N1PES" alt="">
+      <img src="./img/page2.png" alt="">
       <p>2枚目です。少しみづらくてすみません。コロナであったことを報告する場合はアプリ内の陽性情報の登録から申請します。(下部画像)</p>
-      <img src="http://drive.google.com/uc?export=view&amp;id=19xFDkd0txVJCqCIBKlF9d3w19ShqvdX3" alt="">
+      <img src="./img/page3.png" alt="">
       <p>そのキーが本物かということをサーバーで検知し、正式かどうかというものをアプリに送信します。この時サーバーから端末に送信された時trueであれば次の処理が始まりfaultであればエラーメッセージを表示するようになっている。
         trueだった場合バックエンド処理として通知サーバーに送信されるという仕組みになっている。
         そして２週間以内に接触した人に通知がいくようになっています。この時個人の特定ができるような情報は送信しないという。</p>
