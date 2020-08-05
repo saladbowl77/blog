@@ -1,4 +1,3 @@
-/*
 var CACHE_NAME  = "MKit-cache-v1";
 var urlsToCache = [
     "https://blog.saladbowl.work",
