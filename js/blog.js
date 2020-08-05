@@ -7,7 +7,6 @@ function getCSVFile() {
     xhr.send(null);
 }
 getCSVFile();
-console.log("tessssypihirpse");
 function createXMLHttpRequest() {
     var XMLhttpObject = null;
     XMLhttpObject = new XMLHttpRequest();

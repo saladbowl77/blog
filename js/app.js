@@ -21,6 +21,7 @@ var ShutterAnimation = Barba.BaseTransition.extend({
   }
 });
 Barba.Pjax.getTransition = function() {
+  var namespace = Barba.HistoryManager.prevStatus().namespace;
   return ShutterAnimation;
 };
 Barba.Dispatcher.on( 'newPageReady', function( currentStatus, oldStatus, container, newPageRawHTML ) {
@@ -31,7 +32,7 @@ Barba.Dispatcher.on( 'newPageReady', function( currentStatus, oldStatus, contain
         newPageRawHead = newPageRawHTML.match( /<head[^>]*>([\s\S.]*)<\/head>/i )[ 0 ],
         newPageHead = document.createElement( 'head' );
     newPageHead.innerHTML = newPageRawHead;
-    var headTags = [
+    var headTags = [ 
         "meta[name='keywords']",
         "meta[name='description']",
         "meta[property^='og']",

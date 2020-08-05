@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+  <meta charset="UTF-8">
+  <title>Saladbowl Blog</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="https://unpkg.com/modern-css-reset-plus-tool/dist/reset.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header></header>
+<main id="barba-wrapper">
+  <div class="barba-container">
+    <div id="title_data">
+      <div id="title_text">
+			  <h1>非公式コロナ対策サイトを作った話</h1>
+        <p id="tags" class="icon icon-tags"><span>web小話</span>
+        <span>HTML</span>
+        </p>
+        <p id="upload_date" class="icon icon-clock">2020/07/22</p>
+      </div>
+      <img src="./img/thumbnail.png" alt="">
+    </div>
+    <div id="blog_main">
+        <h2>はじめに</h2>
+      <p>こんにちは。さらだぼぉるです。今回は非公式コロナ対策サイトを作った話ということで、作った時に使った技術や、仕組みなどお話ししたいと思います。</p>
+      <h2>デザインの方針</h2>
+      <h3>いちばんの筋</h3>
+      <p>今回このサイトを立ち上げる際に一番気を付けたことはコロナという未知の生物を怖がらないように見せるということです。コロナというものは何もわからない、未知のものだけどそれを恐れないでしっかりと向き合うそういうのを込めてPOPで可愛くそしてみやすくわかりやすいこということを頭に置いていました。</p>
+      <h3>スマホメインの開発</h3>
+      <p>今この世の中パソコンで確認するというよりも、スマホでチャチャっとサイトを見るということがほとんどだと思う。だからこそスマホに最適化したデザインである必要がある。パソコンファーストではなくモバイルファーストへ。</p>
+      <h2>システムについて</h2>
+      <p>前回作ったサイトと大きく違うことはcsvで感染者の数などを管理したという点。csvを使うことで更新も容易になり負担が減った。また滋賀県のオープンデータではないと思うが、公式サイトで使われているcsvデータを利用したりと僕の負担が少しでも減るようにした。</p>
+      <h2>まとめ</h2>
+      <p>オープンデータとしてしっかりと情報などを出してもらうことで開発がしやすくなるというのがわかったのでぜひとも全国の関係者の皆様。お忙しいとは思いますがオープンデータとしての感染者の公表よろしくお願いします。</p>
+    </div>
+    <div id="blog_side">
+     <p>サイドメニュー1</p>
+    </div>
+  </div>
+</main>
+<footer></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/parts.js"></script>
+</body>
+</html>
