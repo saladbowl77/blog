@@ -1,0 +1,31 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<main class="section">
+  <div class="container">
+      {{- $pages := . -}}
+      {{- if .IsHome -}}
+      {{- $pages = .Site.RegularPages -}}
+      {{- else -}}
+      {{ $pages = .Pages -}}
+      {{- end -}}
+      {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
+      <div id="blog_list">
+      {{ range sort .Paginator.Pages }}
+      <div class="blog_link">
+        <a href="{{ .Permalink }}">
+          <img src="/{{ .File.Dir }}{{ .File.BaseFileName }}.png" alt="{{ .Title }}のサムネイル">
+          <h3>{{ .Title }}{{ partial "taxonomies_count" . }}</h3>
+          <p class="date">{{ .Date.Format "January 2, 2006" }}</p>
+        </a>
+          <p class="tags">
+            {{ if .Params.tags }}
+            {{ partial "tags" .Params.tags }}
+            {{ end }}
+          </p>
+      </div>
+    {{ end }}
+    </div>
+  </div>
+</main>
+{{ partial "pager" . }}
+{{ partial "footer" . }}
