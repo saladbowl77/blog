@@ -1,4 +1,4 @@
-baseURL = "hhttps://blog.saladbowl.work"
+baseURL = "https://reverent-snyder-4504ee.netlify.app"
 languageCode = "ja-ja"
 title = "さらいふ"
 [context.production.environment]
