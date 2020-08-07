@@ -12,6 +12,7 @@ main.moved {transition: all 1s; opacity: 0;}
 .blog_link {
   position: relative;
   display: inline-block;
+  padding-bottom: 15px;
 }
 .blog_link a h3,
 .blog_link a p,

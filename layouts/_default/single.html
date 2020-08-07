@@ -14,7 +14,7 @@
         </span>
         </p>
       </div>
-      <img src="/{{ .File.Dir }}{{ .File.BaseFileName }}.png" alt="">
+      <img src="../{{ .File.BaseFileName }}.png" alt="">
     </div>
     {{if not .Date.IsZero }}<h2 class="subtitle is-6"></h2>{{ end }}
     {{ if and (.Site.Params.Info.adsense) (.Params.adsenseTop) }}
