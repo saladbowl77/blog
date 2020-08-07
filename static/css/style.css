@@ -3,7 +3,7 @@ h1, h2, h3, p, a, ul, li {font-family: "M PLUS 1p", "源真ゴシック", "Helve
 ul, ol {list-style: inside;}
 header {width: 100%; text-align: center; background-color: #64bcc7; padding: 10px 0;}
 header a {padding: 5px; font-size: 1.6rem; color: #fff;}
-main {transition: all .5s; opacity: 1; background-color: #fafafa; padding: 10px 0; min-height: 90vh;}
+main {transition: all .5s; opacity: 1; background-color: #fafafa; padding: 10px 0;}
 main.moved {transition: all 1s; opacity: 0;}
 .container {width: 85vw; max-width: 950px; margin: 0 auto;}
 #blog_list {
