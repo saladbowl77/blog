@@ -13,7 +13,10 @@
       {{ range sort .Paginator.Pages }}
       <div class="blog_link">
         <a href="{{ .Permalink }}">
-          <img src="{{ .File.Dir }}{{ .File.BaseFileName }}.png" alt="{{ .Title }}のサムネイル">
+          <picture>
+           <source srcset="{{ .File.Dir }}{{ .File.BaseFileName }}-t.webp" alt="{{ .Title }}のサムネイル" type="image/webp">
+           <img src="{{ .File.Dir }}{{ .File.BaseFileName }}-t.png" alt="{{ .Title }}のサムネイル">
+          </picture>
           <h3>{{ .Title }}{{ partial "taxonomies_count" . }}</h3>
           <p class="date">{{ .Date.Format "2006 1/2" }}</p>
         </a>

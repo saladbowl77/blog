@@ -37,44 +37,7 @@
     website
   {{- end -}}
 '>
-<meta property='og:image' content='https://blog.saladbowl.work/{{ .File.Dir }}{{ .File.BaseFileName }}.png'>
-{{- with .Params.image -}}
-    <meta property='og:image' content='/{{ .File.Dir }}/{{ .File.BaseFileName }}.png'>
-{{- else -}}
-{{- with .Site.Params.Social.email -}}
-    <meta property='og:image' content='https://www.gravatar.com/avatar/
-        {{- . | md5 -}}
-        ?s=256'>
-{{- end -}}
-
-{{- with .Params.audios -}}
-  {{- range first 6 . -}}
-    <meta property='og:audio' content='{{ . | absURL }}'>
-  {{- end -}}
-{{- end -}}
-
-{{- with .Params.videos -}}
-  {{- range first 6 . -}}
-    <meta property='og:video' content='{{ . | absURL }}'>
-  {{- end -}}
-{{- end -}}
-
-{{- if .IsPage -}}
-    {{- with .Site.Params.Social.facebook -}}
-      <meta property='article:author' content='https://facebook.com/{{ . }}'>
-    {{- end -}}
-  {{- end -}}
-
-  {{- with .Site.Params.opengraph.facebook.pageid -}}
-    <meta property='article:publisher' content='{{ . }}'>
-  {{- end -}}
-
-  <meta property='article:section' content='{{- .Section | title -}}'>
-  {{- range .Params.tags -}}
-    <meta property='article:tag' content='{{ . }}'>
-  {{- end -}}
-{{- end -}}
-
+<meta property='og:image' content='https://blog.saladbowl.work/{{ .File.Dir }}{{ .File.BaseFileName }}-t.png'>
 {{- $dateFormat := "2006-01-02T15:04:05Z07:00" -}}
 {{- if .IsPage -}}
   {{- if not .PublishDate.IsZero -}}
@@ -95,16 +58,6 @@
     <meta property='og:updated_time' content='{{ .Site.LastChange.Format $dateFormat }}'/>
   {{- end -}}
 {{- end -}}
-
-{{- with .Site.Params.opengraph.facebook -}}
-  {{- with .appid -}}
-    <meta property='fb:app_id' content='{{ . }}'>
-  {{- end -}}
-  {{- range .admins -}}
-    <meta property='fb:admins' content='{{ . }}'>
-  {{- end -}}
-{{- end -}}
-
 <meta name='twitter:card' content='summary_large_image'>
 <meta name='twitter:site' content='@saladbowl_sub'>
 <meta name='twitter:creator' content='@saladbowl_sub'>

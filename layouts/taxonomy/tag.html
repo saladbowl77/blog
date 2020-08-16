@@ -8,7 +8,7 @@
       {{ range sort .Paginator.Pages }}
       <div class="blog_link">
         <a href="{{ .Permalink }}">
-          <img src="/{{ .File.Dir }}{{ .File.BaseFileName }}.png" alt="{{ .Title }}のサムネイル">
+          <img src="/{{ .File.Dir }}{{ .File.BaseFileName }}-t.png" alt="{{ .Title }}のサムネイル">
           <h3>{{ .Title }}{{ partial "taxonomies_count" . }}</h3>
           <p class="date">{{ .Date.Format "2006 1/2" }}</p>
         </a>
