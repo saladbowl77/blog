@@ -2,4 +2,5 @@ baseURL = "/"
 languageCode = "ja-ja"
 title = "さらいふ"
 
+pygmentsCodeFences = true
 googleAnalytics = "UA-163146016-3"
