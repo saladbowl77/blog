@@ -3,7 +3,7 @@ title: "[Mac向け]Composerをアンインストールする方法"
 date: 2020-08-16T17:19:40+09:00
 draft: false
 tags: ["composer"]
-description : "あらすじ"
+description : "Composerを一回消してリセットしたい！そんな時どうすればいいのかmac向けに解説"
 card : "summary_large_image"
 ---
 ## はじめに
@@ -58,7 +58,6 @@ Downloads		Pictures
 このように表示されると思います。一見何もないように見えます。ではオプションをつけて実行してみましょう。
 ```bash
 ls -a
-
 -実行結果-
 .			.local			.zsh_history
 ..			.mono			Applications
@@ -81,7 +80,7 @@ rm -r .composer
 ```
 これでデータの削除は完了です！
 お疲れ様でした
-### まとめ
+## まとめ
 今回はcomposerの削除方法を書きました。簡単だったと思います。
 そもそもそんな場面はないかもしれませんが誰かのお役に立てたなら幸いです。
 それではさようならー
