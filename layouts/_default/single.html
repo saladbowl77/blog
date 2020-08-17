@@ -29,6 +29,7 @@
       <div class="related">{{ partial "related" . }}</div>
       {{ end }}
     </div>
+    {{ partial "writer" . }}
   </div>
 </main>
 {{ if (and (.Site.Params.Info.codeCopy) (findRE "<pre" .Content 1)) }}

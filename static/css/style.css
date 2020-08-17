@@ -39,8 +39,8 @@ main.moved {transition: all 1s; opacity: 0;}
 .blog_link .tags::before {content: 'tag:';}
 
 #tags a {color: #242424;}
-#blog_main h2 {border-bottom: solid 2px #909090; font-size: 1.3rem; font-weight: 500; margin: 7px 0;}
-#blog_main h3 {position: relative; font-size: 1.2rem; font-weight: 500; margin: 5px 2px; padding-left: 5px;}
+#blog_main h2, #writer h2 {border-bottom: solid 2px #909090; font-size: 1.3rem; font-weight: 600; margin: 7px 0;}
+#blog_main h3 {position: relative; font-size: 1.2rem; font-weight: blod; margin: 5px 2px; padding-left: 5px;}
 #blog_main h3::before {content: ''; position: absolute; background-color: #909090;
   top: 50%; left: -1px;
   display: inline-block;
@@ -49,6 +49,11 @@ main.moved {transition: all 1s; opacity: 0;}
 #title_text h1 {font-size: 1.45rem; font-weight: 600;}
 #title_text p{display: inline-block;}
 #blog_main p {font-size: 1rem; letter-spacing: 0.05rem; line-height: 1.15rem;}
+pre {padding: 15px; width: 100%; border-radius: 10px;}
+
+#writer_icon img,
+#writer_icon source {border-radius: 50%;}
+#writer_data {padding: 10px;}
 
 footer {background-color: #efefef; text-align: center; padding: 5px 3px;}
 footer p {font-size: 0.9rem;}
@@ -58,6 +63,8 @@ footer p {font-size: 0.9rem;}
   .blog_link:first-of-type::before {
     display: none;
   }
+  #writer_icon {width: 200px; margin: 0 auto;}
+  #writer_icon {text-align: center;}
 }
 @media screen and (min-width: 560px) {
   .blog_link {width: 48%; margin: 5px 1%;}
@@ -65,6 +72,12 @@ footer p {font-size: 0.9rem;}
   .blog_link:nth-of-type(2)::before {
     display: none;
   }
+  #writer_wrap {display: flex;}
+  #writer_icon {width: 30%;}
+  #writer_icon img,
+  #writer_icon source {width: 100%;}
+  #writer_data {width: 68%;}
+  #writer_name {font-size: 1.3rem;}
 }
 @media screen and (min-width: 960px) {
   .blog_link {width: 29%; margin: 5px 2.1%;}
