@@ -3,7 +3,7 @@ title: "サイト開設しました"
 date: 2020-08-05T14:50:11+09:00
 draft: false
 tags: ["その他"]
-description : "このページのあらすじ"
+description : "これからよろしくね！"
 card : "summary_large_image"
 ---
 ## はじめに
