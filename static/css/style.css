@@ -48,6 +48,7 @@ main.moved {transition: all 1s; opacity: 0;}
 #title_text h1 {font-size: 1.45rem; font-weight: 600;}
 #title_text p{display: inline-block;}
 #blog_main p {font-size: 1rem; letter-spacing: 0.05rem; line-height: 1.15rem;}
+#blog_main li {margin-left: 20px;}
 pre {padding: 15px; width: 100%; border-radius: 10px;}
 
 #writer_icon img,
