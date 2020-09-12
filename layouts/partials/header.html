@@ -6,7 +6,7 @@
 {{ if eq .IsHome false }}
 <title>{{ .Title }} | {{ .Site.Title }}</title>
 {{ else }}
-<title>{{ .Site.Params.Info.homeTitle }}</title>
+<title>さらいふ 〜さらだぼぉるのプログラミングメモブログ〜</title>
 {{ end }}
 {{ if .Site.Params.Info.enableSocial }}
 {{- partial "social/opengraph" . -}}
@@ -37,6 +37,9 @@
     website
   {{- end -}}
 '>
+<meta name="twitter:description" content="さらだぼぉるのブログさらいふです！プログラミングなどの小話を投稿していきます。">
+<meta name="Keywords" content="プログラミング, さらだぼぉる, ブログ, 技術ブログ, HTML, html, CSS, css, JavaScript, javascript">
+<meta name="description" content="さらだぼぉるのブログさらいふです！プログラミングなどの小話を投稿していきます。">
 <meta property='og:image' content='https://blog.saladbowl.work/{{ .File.Dir }}{{ .File.BaseFileName }}-t.png'>
 {{- $dateFormat := "2006-01-02T15:04:05Z07:00" -}}
 {{- if .IsPage -}}
