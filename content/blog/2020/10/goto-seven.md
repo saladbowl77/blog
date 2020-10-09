@@ -1,10 +1,13 @@
 ---
-title: "とりあえず今すぐセブンに行ってきて"
+title: とりあえず今すぐセブンに行ってきて
+slug: go-to-seven
 date: 2020-10-09T14:50:41+09:00
 draft: false
-tags: ["その他", "セブンイレブン"]
-description : "とりあえずこの記事なんか見てないでセブンに行ってくださあああい"
-card : "summary"
+description: とりあえずこの記事なんか見てないでセブンに行ってくださあああい
+tags:
+  - その他
+  - セブンイレブン
+card: summary
 ---
 こんにちはさらだです。  
 今回はとても美味しいものを見つけたので、みなさんんと共有したいと思います、というかみなさん買いに行ってください。今すぐ  
@@ -16,12 +19,16 @@ card : "summary"
 この三つです。
 
 ## 安納芋チップス・スティック
+![安納芋チップスの画像](https://res.cloudinary.com/saladbowl/image/upload/f_auto/v1602243255/gotoseven/imo-chips1_ekf4dq.jpg)
+![安納芋スティックの画像](https://res.cloudinary.com/saladbowl/image/upload/f_auto/v1602243256/gotoseven/imo-stick1_rjtrdk.jpg)
 まず安納芋シリーズ(?)  
 この安納芋は種子島産の安納芋を100%使ってるそうです。  
 ものすごく芋の甘味が口の中に広がって、とても美味しいです。  
 なんせ砂糖が入っていないのにこの甘さ、そしてチップス、スティックともにとてもカリカリで大変美味しいです。  
 芋好きにとっては必見の商品だと思います。
+![安納芋チップスの画像](https://res.cloudinary.com/saladbowl/image/upload/f_auto/v1602243255/gotoseven/imo-chips2_hgnqov.jpg)
 チップスは本当に芋をスライスしたそんなサイズ感で、とてもいい感じになっています。  
+![安納芋スティックの画像](https://res.cloudinary.com/saladbowl/image/upload/f_auto/v1602243254/gotoseven/imo-stick3_cnq2nu.jpg)
 スティックは少し短いのが多かったですが、スティック状なのでとても食べやすかったです。  
 {{< table id="imo" class="overflow_true">}}
 |商品名|値段|
@@ -30,10 +37,11 @@ card : "summary"
 |スティック|¥198|
 {{</ table >}}
 
-
 まぁ余談ですが、チップスとスティックを買ったのは1週間ほどずれているのですが、チップスを買った時店員さんがお手拭きを下さったのはとても嬉しかったですね。本当にありがとうございます。
 
 ## SEVEN'S BOSS BLACK
+![SEVEN'S BOSS BLACKの画像](https://res.cloudinary.com/saladbowl/image/upload/f_auto/v1602243256/gotoseven/boss-black_vzr5e8.jpg)
+
 あのBOSSとセブンがコラボしたコーヒー。一口飲んで違うのがわかります。  
 *豆の風味がすごい*  
 ものすごく豆の風味がします。  
