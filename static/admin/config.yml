@@ -11,7 +11,8 @@ collections:
     name: "blog"
     folder: "content/blog/{{year}}/{{month}}" # Markdownを保存するディレクトリ。Hugoのsectionにあたる
     create: true
-    slug: {label: "URL名", name: "urlname", widget: "string"}
+    slug: 
+      - {label: "URL名", name: "urlname", widget: "string"}
     fields:
       - {label: "タイトル", name: "title", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime"}
