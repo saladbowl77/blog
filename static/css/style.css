@@ -62,14 +62,14 @@ main.moved {transition: all 1s; opacity: 0;}
 #blog_main blockquote{ position:relative; background-color: #efefef; border:2px solid #b1b1b1; border-radius:10px; padding:20px; width: calc(100% - 40px);}
 #blog_main blockquote p {margin: 15px;}
 #blog_main blockquote:before{
-  position:absolute; content: url(./quotation.png); display: inline-block; vertical-align: middle;
+  position:absolute; content: url(/icon/quotation.png); display: inline-block; vertical-align: middle;
   -webkit-transform: scale(0.4) rotate(180deg);
   transform: scale(0.4) rotate(180deg);
   font-size: 20px; color:#8BC0B8;
   top:-10px; left:5px;
 }
 #blog_main blockquote:after{position:absolute;
-  content: url(./quotation.png); display: inline-block; vertical-align: middle; 
+  content: url(/icon/quotation.png); display: inline-block; vertical-align: middle; 
   -webkit-transform: scale(0.4); transform: scale(0.4);
   font-size: 20px; color:#8BC0B8; right:10px; bottom:-15px;
 }
