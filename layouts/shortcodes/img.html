@@ -1,0 +1,19 @@
+<img
+    {{ $type := .Get "type" }}
+    {{ if eq $type "cfa" }}
+        src="https://res.cloudinary.com/saladbowl/image/upload/f_auto/{{ .Get "src" }}"
+    {{ else if  eq $type "cf" }}
+        src="https://res.cloudinary.com/saladbowl/image/upload/{{ .Get "src" }}"
+    {{ else if  eq $type "none" }}
+        src="{{ .Get "src" }}"
+    {{ else }}
+        src="{{ .Get "src" }}"
+    {{ end }}
+        alt="{{ .Get "alt" }}"
+    {{ if .Get "id" }}
+        class="{{ .Get "id" }}"
+    {{ end }}
+    {{ if .Get "class" }}
+        class="{{ .Get "class" }}"
+    {{ end }}
+/>

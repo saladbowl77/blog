@@ -19,16 +19,21 @@ card: summary
 この三つです。
 
 ## 安納芋チップス・スティック
-![安納芋チップスの画像](https://res.cloudinary.com/saladbowl/image/upload/f_auto/v1602243255/gotoseven/imo-chips1_ekf4dq.jpg)
-![安納芋スティックの画像](https://res.cloudinary.com/saladbowl/image/upload/f_auto/v1602243256/gotoseven/imo-stick1_rjtrdk.jpg)
+{{< img type="cfa" class="d-i-b" src="v1602246578/gotoseven/imo-chips1_ekf4dq.jpg" title="安納芋チップスの袋画像" >}}
+{{< img type="cfa" class="d-i-b" src="v1602246642/gotoseven/imo-stick1_rjtrdk.jpg" title="安納芋スティックの袋画像" >}}
+
 まず安納芋シリーズ(?)  
 この安納芋は種子島産の安納芋を100%使ってるそうです。  
 ものすごく芋の甘味が口の中に広がって、とても美味しいです。  
 なんせ砂糖が入っていないのにこの甘さ、そしてチップス、スティックともにとてもカリカリで大変美味しいです。  
 芋好きにとっては必見の商品だと思います。
-![安納芋チップスの画像](https://res.cloudinary.com/saladbowl/image/upload/f_auto/v1602243255/gotoseven/imo-chips2_hgnqov.jpg)
+
+{{< img type="cfa" class="d-i-b" src="v1602250331/gotoseven/imo-chips2_hgnqov.jpg" title="安納芋チップスの画像" >}}
+
 チップスは本当に芋をスライスしたそんなサイズ感で、とてもいい感じになっています。  
-![安納芋スティックの画像](https://res.cloudinary.com/saladbowl/image/upload/f_auto/v1602243254/gotoseven/imo-stick3_cnq2nu.jpg)
+
+{{< img type="cfa" class="d-i-b" src="v1602243254/gotoseven/imo-stick3_cnq2nu.jpg" title="安納芋スティックの画像" >}}
+
 スティックは少し短いのが多かったですが、スティック状なのでとても食べやすかったです。  
 {{< table id="imo" class="overflow_true">}}
 |商品名|値段|
@@ -40,7 +45,7 @@ card: summary
 まぁ余談ですが、チップスとスティックを買ったのは1週間ほどずれているのですが、チップスを買った時店員さんがお手拭きを下さったのはとても嬉しかったですね。本当にありがとうございます。
 
 ## SEVEN'S BOSS BLACK
-![SEVEN'S BOSS BLACKの画像](https://res.cloudinary.com/saladbowl/image/upload/f_auto/v1602243256/gotoseven/boss-black_vzr5e8.jpg)
+{{< img type="cfa" class="d-i-b" src="v1602243256/gotoseven/boss-black_vzr5e8.jpg" title="SEVEN'S BOSS BLACKの画像" >}}
 
 あのBOSSとセブンがコラボしたコーヒー。一口飲んで違うのがわかります。  
 *豆の風味がすごい*  
@@ -66,5 +71,4 @@ card: summary
 |SEVEN'S BOSS BLACK|¥125|
 {{</ table >}}
 
-
-※ 価格は全て税抜き
+※ 本記事に書いている価格は全て税抜き
