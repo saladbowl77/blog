@@ -29,6 +29,7 @@ main.moved {transition: all 1s; opacity: 0;}
 }
 .blog_link img {
   width: 98%; border-radius: 5px; margin: 0 2%;
+  max-width: 500px;
 }
 .blog_link p.date,
 .blog_link p,
