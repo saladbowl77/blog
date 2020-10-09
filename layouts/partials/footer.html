@@ -2,14 +2,5 @@
   <a href="/site/terms">利用規約 プライバシーポリシー</a>
   <p>&copy;Copyright 2020 さらいふ All rights reserved.</p>
 </footer>
-{{ if .Site.GoogleAnalytics }}
-{{ template "_internal/google_analytics_async.html" . }}
-{{ end }}
-{{ if .Site.Params.matomoAnalytics }}
-{{- partial "analytics/matomo" . -}}
-{{ end }}
-{{ if .Site.Params.fathomAnalytics }}
-{{- partial "analytics/fathom" . -}}
-{{ end }}
 </body>
 </html>

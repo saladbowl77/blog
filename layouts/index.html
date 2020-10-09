@@ -2,13 +2,6 @@
 {{ partial "nav" . }}
 <main class="section">
   <div class="container">
-      {{- $pages := . -}}
-      {{- if .IsHome -}}
-      {{- $pages = .Site.RegularPages -}}
-      {{- else -}}
-      {{ $pages = .Pages -}}
-      {{- end -}}
-      {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
       <div id="blog_list">
       {{ range sort .Paginator.Pages }}
       <div class="blog_link">
@@ -30,5 +23,4 @@
     </div>
   </div>
 </main>
-{{ partial "pager" . }}
 {{ partial "footer" . }}

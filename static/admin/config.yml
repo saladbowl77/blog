@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo:  saladbowl77/blog
+
+media_folder: "static/images"
+
+public_folder: "images/"
+
+collections:
+  - label: "Blog"
+    name: "blog"
+    folder: "content/blog/{{year}}/{{month}}" # Markdownを保存するディレクトリ。Hugoのsectionにあたる
+    create: true
+    slug: {label: "URL名", name: "urlname", widget: "string"}
+    fields:
+      - {label: "タイトル", name: "title", widget: "string"}
+      - {label: "公開日", name: "date", widget: "datetime"}
+      - {label: "あらすじ", name: "description", widget: "string"}
+      - {label: "タグ", name: "tags", widget: "list"}
+      - {label: "本文", name: "body", widget: "markdown"}
+      - {label: "TwitterCard", name: "card", widget: "select", options: ["summary", "summary_large_image"]}

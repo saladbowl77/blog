@@ -47,8 +47,13 @@ main.moved {transition: all 1s; opacity: 0;}
 #title_data img {width: 100%; margin: 0 auto; max-width: 600px;}
 #title_text h1 {font-size: 1.45rem; font-weight: 600;}
 #title_text p{display: inline-block;}
-#blog_main p {font-size: 1rem; letter-spacing: 0.05rem; line-height: 1.15rem;}
+#blog_main p {font-size: 1rem; letter-spacing: 0.05rem; line-height: 1.15rem; margin: 10px 0;}
 #blog_main li {margin-left: 20px;}
+#blog_main .table {overflow-x: auto; width: 100%; margin: 10px 0;}
+#blog_main table {border-collapse: collapse; overflow-x: auto; text-align: center;}
+#blog_main table th {background: #efefef;}
+#blog_main table th,
+#blog_main table td {border: 1px solid #909090; padding: 0; margin: 0; width: auto; min-width: 100px; padding: 3px 10px;}
 pre {padding: 15px; width: 100%; border-radius: 10px; overflow: scroll;}
 
 #writer_icon img,
