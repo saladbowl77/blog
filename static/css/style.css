@@ -58,7 +58,23 @@ main.moved {transition: all 1s; opacity: 0;}
 #blog_main table th {background: #efefef;}
 #blog_main table th,
 #blog_main table td {border: 1px solid #909090; padding: 0; margin: 0; width: auto; min-width: 100px; padding: 3px 10px;}
-pre {padding: 15px; width: 100%; border-radius: 10px; overflow: scroll;}
+#blog_main pre {padding: 15px; width: 100%; border-radius: 10px; overflow: scroll;}
+#blog_main blockquote{ position:relative; background-color: #efefef; border:2px solid #b1b1b1; border-radius:10px; padding:20px; width: calc(100% - 40px);}
+#blog_main blockquote p {margin: 15px;}
+#blog_main blockquote:before{
+  position:absolute; content: url(./quotation.png); display: inline-block; vertical-align: middle;
+  -webkit-transform: scale(0.4) rotate(180deg);
+  transform: scale(0.4) rotate(180deg);
+  font-size: 20px; color:#8BC0B8;
+  top:-10px; left:5px;
+}
+#blog_main blockquote:after{position:absolute;
+  content: url(./quotation.png); display: inline-block; vertical-align: middle; 
+  -webkit-transform: scale(0.4); transform: scale(0.4);
+  font-size: 20px; color:#8BC0B8; right:10px; bottom:-15px;
+}
+#blog_main blockquote cite {display: block; font-size: 0.8rem; text-align: right; color: #D4DED7; margin: 5px 5px 10px 5px; padding-right:20px;}
+
 
 #writer_icon img,
 #writer_icon source {border-radius: 50%;}
