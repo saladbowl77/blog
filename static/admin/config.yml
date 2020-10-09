@@ -9,12 +9,14 @@ public_folder: "images/"
 collections:
   - label: "Blog"
     name: "blog"
-    folder: "content/blog/{{year}}/{{month}}" # Markdownを保存するディレクトリ。Hugoのsectionにあたる
+    folder: "content/blog"
+    path: "{{year}}/{{month}}/{{slug}}"
+    preview_path: "blog/{{year}}/{{month}}/{{slug}}"
     create: true
-    slug: 
-      - {label: "URL名", name: "urlname", widget: "string"}
+    slug: '{{fields.slug}}'
     fields:
       - {label: "タイトル", name: "title", widget: "string"}
+      - {label: "url名", name: "slug", widget: "string", default: "default-slug"}
       - {label: "公開日", name: "date", widget: "datetime"}
       - {label: "あらすじ", name: "description", widget: "string"}
       - {label: "タグ", name: "tags", widget: "list"}
