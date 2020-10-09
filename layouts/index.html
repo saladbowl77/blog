@@ -3,7 +3,7 @@
 <main class="section">
   <div class="container">
       <div id="blog_list">
-      {{ range sort .Paginator.Pages }}
+      {{ range sort .Site.RegularPages.ByDate.Reverse }}
       <div class="blog_link">
         <a href="{{ .Permalink }}">
           <picture>
