@@ -1,0 +1,10 @@
+{{ if .Get `url` }}
+<blockquote>
+    <p>{{ .Inner }}</p>
+    <cite>引用：<a href="{{ .Get `url` }}">{{ .Get `data_by` }}</a></cite>
+</blockquote>
+{{ else }}
+<blockquote>
+    <p>{{ .Inner }}</p>
+</blockquote>
+{{ end }}

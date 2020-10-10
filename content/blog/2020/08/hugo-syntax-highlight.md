@@ -2,7 +2,7 @@
 title: "Hugoでシンタックスハイライトを実装する"
 date: 2020-08-17T16:16:34+09:00
 draft: false
-tags: ["hugo"]
+tags: ["HUGO"]
 description : "Hugoでシンタックスハイライトを実装する方法のメモ"
 card : "summary"
 ---

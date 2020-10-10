@@ -2,7 +2,7 @@
 title: "このサイトの仕組み"
 date: 2020-08-06T21:52:09+09:00
 draft: false
-tags: ["その他", "Hugo", "Netlify"]
+tags: ["その他", "HUGO", "Netlify"]
 description : "さらいふの動いている仕組みなどを解説するよ！"
 card : "summary_large_image"
 images : ["/post/about-this-site.png"]

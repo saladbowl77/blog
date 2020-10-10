@@ -1,7 +1,7 @@
 ---
 title: HUGOでデザイン凝りたい？ならShortcode使おうぜ
 slug: hugo-shortcode
-date: 2020-10-10T23:00:58.777Z
+date: 2020-10-11T23:00:58.777Z
 description: HUGOで画像とか表とかなんか色々デザイン凝りたいけどマークダウン だけだと満足できない人のためのShortcode入門
 tags:
   - HUGO
@@ -11,7 +11,7 @@ card: summary
 HUGOで画像を入れる時みなさんはどうしていますか？  
 多分ほとんどのマークダウン 方式になれた人は
 ``` markdown
-[画像url](画像のalt)
+![画像の名前](画像URL)
 ```  
 みたいな感じで書いていると思います。ただそれって  
 ```html
@@ -22,14 +22,16 @@ HUGOで画像を入れる時みなさんはどうしていますか？
 別に気にならないという方がいれば別にいいのですが、とても気持ち悪い感じがするんですよね。文章の中に画像。これの対処法をご紹介します。
 
 ## shortcodeの使い方
-ということでとりあえず使い方の前に、shortcodeってなんやねんというお話から。shortcodeとは、
-
-{{ quotation txt="Hugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video &lt;iframe&gt; ’s) to Markdown content. We think this contradicts the beautiful simplicity of Markdown’s syntax.
-Hugo created shortcodes to circumvent these limitations." data_by="Shortcodes - Hugo" url="https://gohugo.io/content-management/shortcodes/" }}  
+ということでとりあえず使い方の前に、shortcodeってなんやねんというお話から。shortcodeとは、  
+{{< blockquote data_by="Shortcodes-Hugo" url="https://gohugo.io/content-management/shortcodes/" >}}
+Hugo loves Markdown because of its simple content format, but there are times when Markdown falls short. Often, content authors are forced to add raw HTML (e.g., video &lt;iframe&gt; ’s) to Markdown content. We think this contradicts the beautiful simplicity of Markdown’s syntax. \n Hugo created shortcodes to circumvent these limitations.
+{{< /blockquote >}}  
 
 ということらしいです。いや英語わからねぇという人のために翻訳すると
 
-{{ quotation txt="Hugoはmarkdownを使ってるけど、iframeとかの生のHTML入れたい時マークダウン の綺麗な形が損なわれるし、不便よな。Hugo動きます。" }}  
+{{< blockquote >}}
+Hugoはmarkdownを使ってるけど、iframeとかの生のHTML入れたい時マークダウンの綺麗な形が損なわれるし、不便よな。Hugo動きます。
+{{< /blockquote >}}
 
 ということです。(もうこのネタ古いのかな？)生のHTMLを埋め込むのがダサいのでそれの改善策で作られたものみたいですね。これをうまく使って画像を表示しようということです。
 
@@ -43,15 +45,15 @@ Hugo created shortcodes to circumvent these limitations." data_by="Shortcodes - 
 
 ```html
 <img
-    src="{{ .Get "src" }}"
-    {{ if .Get "alt" }}
-        alt="{{ .Get "alt" }}"
+    src="{{ .Get `src` }}"
+    {{ if .Get `alt` }}
+        alt="{{ .Get `alt` }}"
     {{ end }}
-    {{ if .Get "id" }}
-        class="{{ .Get "id" }}"
+    {{ if .Get `id` }}
+        class="{{ .Get `id` }}"
     {{ end }}
-    {{ if .Get "class" }}x
-        class="{{ .Get "class" }}"
+    {{ if .Get `class` }}
+        class="{{ .Get `class` }}"
     {{ end }}
 />
 ```
@@ -60,35 +62,35 @@ Hugo created shortcodes to circumvent these limitations." data_by="Shortcodes - 
 では、次にmarkdownにはどのように書くのか、上記の通常使用の場合は以下のコードを書くと実装できます。
 
 ```markdown
-{{< img id="" class="" src="" alt="" >}}
+{{ < img id="" class="" src="" alt="" >}}
 ```
 
 ここまでフルに入れなくてもいいという場合は
 
 ```markdown
-{{< img src="" alt="" >}}
+{{ < img src="" alt="" >}}
 ```
 
 こんな感じでいいと思います。ちなみに僕は以下のようにコードを変えています。
 
 ```html
 <img
-    {{ $type := .Get "type" }}
+    {{ $type := .Get `type` }}
     {{ if eq $type "cfa" }}
-        src="https://res.cloudinary.com/saladbowl/image/upload/f_auto/{{ .Get "src" }}"
+        src="https://res.cloudinary.com/saladbowl/image/upload/f_auto/{{ .Get `src` }}"
     {{ else if  eq $type "cf" }}
-        src="https://res.cloudinary.com/saladbowl/image/upload/{{ .Get "src" }}"
+        src="https://res.cloudinary.com/saladbowl/image/upload/{{ .Get `src` }}"
     {{ else if  eq $type "none" }}
-        src="{{ .Get "src" }}"
+        src="{{ .Get `src` }}"
     {{ else }}
-        src="{{ .Get "src" }}"
+        src="{{ .Get `src` }}"
     {{ end }}
-        alt="{{ .Get "alt" }}"
-    {{ if .Get "id" }}
-        class="{{ .Get "id" }}"
+        alt="{{ .Get `alt` }}"
+    {{ if .Get `id` }}
+        class="{{ .Get `id` }}"
     {{ end }}
-    {{ if .Get "class" }}
-        class="{{ .Get "class" }}"
+    {{ if .Get `class` }}
+        class="{{ .Get `class` }}"
     {{ end }}
 />
 ```
@@ -103,7 +105,7 @@ YouTubeを埋め込んでみましょう。どうするのか、もうお分か�
 <iframe
 	width="560"
 	height="315"
-	src="https://www.youtube.com/embed/"{{ .Get "url" }}""
+	src="https://www.youtube.com/embed/{{ .Get `url` }}"
 	frameborder="0"
 	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
@@ -112,9 +114,15 @@ YouTubeを埋め込んでみましょう。どうするのか、もうお分か�
 youtubeのurl (https://youtu.be/yaUxNp-fn-A)をコピーしてきて、 
  
 ```markdown
-{{< youtube url ="yaUxNp-fn-A" >}}
+{{ < youtube url="yaUxNp-fn-A" >}}
 ```
 
 こんな感じに記述をします。  
-そうすると表示されます！  
-もし、cssなど聴かせたい場合はdivなどで囲っちゃてもいいですよ！  
+そうすると表示されます！
+
+{{< youtube url="yaUxNp-fn-A" >}}
+
+(昔作っていた、文字PVです。よかったらみてください。)  
+もし、cssなど使ってデザインを凝りたい場合は、適宜htmlファイルを変更してくださいね。  
+{{< link url="/2020/10/youtube-css/" txt="YouTubeのレスポンシブデザイン対応" >}}  
+記事も書いているので是非ご覧ください。
