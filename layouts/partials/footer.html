@@ -2,5 +2,11 @@
   <a href="/site/terms">利用規約 プライバシーポリシー</a>
   <p>&copy;Copyright 2020 さらいふ All rights reserved.</p>
 </footer>
+<script>
+  const image = document.querySelector('img');
+  image.addEventListener('error',() => {
+    image.setAttribute('src', '/images/image_not_found.png');
+  });
+</script>
 </body>
 </html>

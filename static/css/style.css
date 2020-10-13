@@ -1,10 +1,13 @@
-*,*::before,*::after{box-sizing:border-box}ul[class],ol[class]{padding:0}body,h1,h2,h3,h4,h5,h6,p,a,ul,ol,li,img,figure,blockquote,dl,dd{margin:0;padding:0}html{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}ul[class],ol[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}article>*+*{margin-top:1em}input,button,textarea,select{font:inherit}img:not([alt]){filter:blur(10px)}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}img:not([src]),img[src=""]{height:300px;width:100%;background-color:#f75555}a{text-decoration:none}a.icon_link::after{margin-left:3px;content:"\f0c1";font-family:'Font Awesome 5 Free';font-size:.8em;display:inline-block}a.icon_link_blank::after{margin-left:3px;content:"\f35d";font-family:'Font Awesome 5 Free';font-size:.8em;display:inline-block}
+*,*::before,*::after{box-sizing:border-box}ul[class],ol[class]{padding:0}body,h1,h2,h3,h4,h5,h6,p,a,ul,ol,li,img,figure,blockquote,dl,dd{margin:0;padding:0}html{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}ul[class],ol[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}article>*+*{margin-top:1em}input,button,textarea,select{font:inherit}img:not([alt]){filter:blur(10px)}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}a{text-decoration:none}a.icon_link::after{margin-left:3px;content:"\f0c1";font-family:'Font Awesome 5 Free';font-size:.8em;display:inline-block}a.icon_link_blank::after{margin-left:3px;content:"\f35d";font-family:'Font Awesome 5 Free';font-size:.8em;display:inline-block}
 h1, h2, h3, p, a, ul, li, th, td {font-family: "M PLUS 1p", "源真ゴシック", "Helvetica Neue",Helvetica,Arial, YuGothic, 'Yu Gothic', 游ゴシック体, '游ゴシック', "ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ", Meiryo,"MS ゴシック","MS Gothic",sans-serif;}
 header {width: 100%; text-align: center; background-color: #64bcc7; padding: 10px 0;}
 header a {padding: 5px; font-size: 1.6rem; color: #fff;}
 main {transition: all .5s; opacity: 1; background-color: #fafafa; padding: 10px 0;}
 main.moved {transition: all 1s; opacity: 0;}
 .container {width: 85vw; max-width: 950px; margin: 0 auto;}
+img:not([src]),img[src=""]{content: url(/images/image_not_found.png); display: inline-block; vertical-align: middle;
+
+}
 #blog_list {
   display: flex; flex-wrap: wrap;
 }
@@ -49,34 +52,7 @@ main.moved {transition: all 1s; opacity: 0;}
 #title_text p{display: inline-block;}
 #blog_main p {font-size: 1rem; letter-spacing: 0.05rem; line-height: 1.15rem; margin: 10px 0;}
 #blog_main li {margin-left: 20px;}
-#blog_main img {width: 100%; height: auto; margin: 0 auto; max-width: 400px;}
-#blog_main #img2 {width: 40%; display: flex; justify-content: space-between; flex-flow: column;}
-#blog_main #img2 img {width: 40%;}
-#blog_main img.fullsize {width: 100%; height: auto; margin: 0 auto;}
-#blog_main .table {overflow-x: auto; width: 100%; margin: 10px 0;}
-#blog_main table {border-collapse: collapse; overflow-x: auto; text-align: center;}
-#blog_main table th {background: #efefef;}
-#blog_main table th,
-#blog_main table td {border: 1px solid #909090; padding: 0; margin: 0; width: auto; min-width: 100px; padding: 3px 10px;}
 #blog_main pre {padding: 15px; width: 100%; border-radius: 10px; overflow: scroll;}
-#blog_main blockquote{ position:relative; background-color: #efefef; border:2px solid #b1b1b1; border-radius:10px; padding:20px; width: calc(100% - 40px);}
-#blog_main blockquote p,
-#blog_main blockquote a {margin: 20px;}
-#blog_main blockquote:before{
-  position:absolute; content: url(/icon/quotation.png); display: inline-block; vertical-align: middle;
-  -webkit-transform: scale(0.35) rotate(180deg);
-  transform: scale(0.35) rotate(180deg);
-  font-size: 20px; color:#8BC0B8;
-  top:-10px; left:5px;
-}
-#blog_main blockquote:after{position:absolute;
-  content: url(/icon/quotation.png); display: inline-block; vertical-align: middle; 
-  -webkit-transform: scale(0.35); transform: scale(0.35);
-  font-size: 20px; color:#8BC0B8; right:10px; bottom:-15px;
-}
-#blog_main blockquote cite {display: block; font-size: 0.8rem; text-align: right; color: #D4DED7; margin: 5px 5px 10px 5px; padding-right:20px;}
-#blog_main .youtube {position: relative; width: 100%; padding-top: 56.25%; max-width: 704px; max-height: 396px; display: block; margin: 0 auto;}
-#blog_main .youtube iframe {position: absolute; top: 0; right: 0; width: 100%; height: 100%;}
 
 #writer_icon img,
 #writer_icon source {border-radius: 50%;}
