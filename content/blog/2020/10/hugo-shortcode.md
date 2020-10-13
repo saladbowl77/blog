@@ -111,7 +111,7 @@ YouTubeを埋め込んでみましょう。どうするのか、もうお分か�
 </iframe>
 ```
 
-youtubeのurl (https://youtu.be/yaUxNp-fn-A) をコピーしてきて、 
+youtubeのurl ({{< link url="https://youtu.be/yaUxNp-fn-A" text="https://youtu.be/yaUxNp-fn-A">}}) をコピーしてきて、 
  
 ```markdown
 {{ < youtube url="yaUxNp-fn-A" >}}
