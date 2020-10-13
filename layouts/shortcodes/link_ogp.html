@@ -1,30 +1,10 @@
 <a class="link_og" href="{{ .Get `url` }}">
-    <img src="" alt="" id="og_img">
+    <picture>
+     <source srcset="{{ .Get `url` }}-t.webp" id="og_img" alt="{{ .Get `txt`}}のサムネイル" type="image/webp">
+     <img src="{{ .Get `url` }}-t.png" id="og_img" alt="{{ .Get `txt`}}のサムネイル">
+    </picture>
     <div class="link_og_data">
         <p>{{ .Get `txt`}}</p>
         <p class="link_og_url">{{ .Get `url` }}</p>
     </div>
 </a>
-<script>
-const url = "{{ .Get `url` }}";
-fetch(url)
-    .then(res => res.text())
-    .then(text => {
-        const el = new DOMParser().parseFromString(text, "text/html")
-        const headEls = (el.head.children)
-        Array.from(headEls).map(v => {
-            const prop = v.getAttribute('property')
-            if (prop == faulse) {
-                document.getElementById("og_img").src = "/image/image_not_found.png";
-                document.getElementById("og_img").alt = "画像が取得できませんでした";
-            } else {
-                if (prop == "og:image"){
-                    document.getElementById("og_img").src = v.getAttribute("content");
-                }
-                if (prop == "og:title"){
-                    document.getElementById("og_img").alt = v.getAttribute("content");
-                }
-            }
-        })
-    })
-</script>

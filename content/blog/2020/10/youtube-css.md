@@ -46,7 +46,8 @@ YouTubeの埋め込みって固定サイズですよね。
 
 {{< youtube url="yaUxNp-fn-A" >}}
 
-これはshortcodeを使って埋め込み実装をしています。  
-{{< link_ogp url="https://blog.saladbowl.work/blog/2020/10/hugo-shortcode" txt="HUGOでデザイン凝りたい？ならShortcode使おうぜ">}} 
+これはshortcodeを使って埋め込み実装をしています。
+
+{{< link_ogp url="/blog/2020/10/hugo-shortcode" txt="HUGOでデザイン凝りたい？ならShortcode使おうぜ">}} 
 
 につかいかたをのせています。ぜひそちらもごらんください

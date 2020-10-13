@@ -125,6 +125,6 @@ youtubeのurl (https://youtu.be/yaUxNp-fn-A)をコピーしてきて、
 (昔作っていた、文字PVです。よかったらみてください。)  
 もし、cssなど使ってデザインを凝りたい場合は、適宜htmlファイルを変更してくださいね。
 
-{{< link_ogp url="https://blog.saladbowl.work/blog/2020/10/youtube-css/" txt="YouTubeのレスポンシブデザイン対応" >}}
+{{< link_ogp url="/blog/2020/10/youtube-css/" txt="YouTubeのレスポンシブデザイン対応" >}}
 
 記事も書いているので是非ご覧ください。
