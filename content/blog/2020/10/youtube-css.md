@@ -7,7 +7,7 @@ tags:
   - YouTube
   - CSS
   - Salad's Memo
-card: summary
+card: summary_large_image
 ---
 YouTubeの埋め込みって固定サイズですよね。  
 それをレスポンシブデザイン対応にする、小技のめも。
@@ -47,4 +47,6 @@ YouTubeの埋め込みって固定サイズですよね。
 {{< youtube url="yaUxNp-fn-A" >}}
 
 これはshortcodeを使って埋め込み実装をしています。  
-明日の8時にshortcodeを使った埋め込み実装の方法のblogを掲載するのでお楽しみに！
+{{< link_ogp url="https://blog.saladbowl.work/blog/2020/10/hugo-shortcode" txt="HUGOでデザイン凝りたい？ならShortcode使おうぜ">}} 
+
+につかいかたをのせています。ぜひそちらもごらんください
