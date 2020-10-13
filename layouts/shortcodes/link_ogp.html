@@ -1,8 +1,5 @@
 <a class="link_og" href="{{ .Get `url` }}">
-    <picture>
-     <source srcset="{{ .Get `url` }}-t.webp" id="og_img" alt="{{ .Get `txt`}}のサムネイル" type="image/webp">
-     <img src="{{ .Get `url` }}-t.png" id="og_img" alt="{{ .Get `txt`}}のサムネイル">
-    </picture>
+    <img src="{{ .Get `url` }}-t.png" id="og_img" alt="{{ .Get `txt`}}のサムネイル">
     <div class="link_og_data">
         <p>{{ .Get `txt`}}</p>
         <p class="link_og_url">{{ .Get `url` }}</p>
