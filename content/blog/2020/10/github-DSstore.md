@@ -6,7 +6,7 @@ draft: false
 description: あらすじ
 tags:
   - GitHub
-  - Salad'sメモ
+  - Salad's Memo
 card: summary_large_image
 ---
 GitHubDesktopで.DS_Storeが出ていてうっとしいことってありますよね。そんなときの対処法をお教えします。
