@@ -1,6 +1,7 @@
 backend:
   name: github
   repo:  saladbowl77/blog
+locale: 'ja'
 
 media_folder: "static/images"
 
