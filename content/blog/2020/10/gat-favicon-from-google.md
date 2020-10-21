@@ -28,7 +28,7 @@ https://www.google.com/s2/favicons?domain=[URL]
 になります。
 それを表示すると、
 
-{{<img src='<img src="https://www.google.com/s2/favicons?domain=https://blog.saladbowl.work/"alt="さらいふのアイコン"/>' >}}
+{{<img src="https://www.google.com/s2/favicons?domain=https://blog.saladbowl.work/" >}}
 
 ***ちっさ***
 
