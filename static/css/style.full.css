@@ -31,7 +31,7 @@ img:not([src]),img[src=""]{content: url(/images/image_not_found.png); display: i
   background-color: #989898; border-radius: 1px;
 }
 .blog_link img {
-  width: 98%; border-radius: 5px; margin: 0 2%;
+  width: 100%; border-radius: 5px;
 }
 .blog_link p.date,
 .blog_link p,
