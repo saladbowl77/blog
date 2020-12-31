@@ -2,7 +2,7 @@
 title: 2020年の振り返り
 slug: looking-back-over-the-past-year-2020
 date: 2020-12-31T02:16:18.034Z
-description: 2020はいろんな年でした。そんな年に僕がしてきたことを書きたいと思います。
+description: 2020は色々大変な年でした。そんな年に僕がしてきたことを書きたいと思います。
 tags:
   - 振り返り
 card: summary_large_image
