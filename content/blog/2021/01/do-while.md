@@ -22,10 +22,10 @@ card : "summary_large_image"
 ```c
 int i = 0;
 do{
-	printf(i);
+	printf("%d\n",i);
 	i++;
 }while (i < 10);
-printf("10だよ!")
+printf("10だよ!\n");
 ```
 参考 [do-while ステートメント (C) | Microsoft Docs](https://docs.microsoft.com/ja-jp/cpp/c-language/do-while-statement-c?view=msvc-160)
 
@@ -34,7 +34,7 @@ printf("10だよ!")
 let i = 0;
 do {
 	console.log(i)
-	i = i + 1;s
+	i = i + 1;
 } while (i < 10);
 ```
 参考 [do...while - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/do...while)
@@ -70,5 +70,6 @@ for i > 10 {
 }
 fmt.Printf("10だよ!")
 ```
+参考 [Go言語 - forループによる繰り返し処理 - 覚えたら書く](https://blog.y-yuki.net/entry/2017/05/06/000000)
 
 また他の言語をやり出したら追記します。
