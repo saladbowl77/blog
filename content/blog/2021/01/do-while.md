@@ -1,10 +1,12 @@
 ---
-title: "いろんなdo whileを比較してみた!"
+title: いろんなdo whileを比較してみた!
+slug: do-while
 date: 2021-01-17T10:00:00+09:00
 draft: false
-tags: ["Salad's Memo"]
-description : "いろんな言語のdo while文にあたるものを書いてみました!"
-card : "summary_large_image"
+description: いろんな言語のdo while文にあたるものを書いてみました!
+tags:
+  - Salad's Memo
+card: summary_large_image
 ---
 こんにちは。さらだぼぉるです。  
 先日学校の課題でCのdo whileをしたのですが、「そういえば、do whileってあんま使わんな」と思ったので僕がいつも使っている言語でdo while文を書いてみようと言う記事です。(新年最初の記事がこんなのでいいのか...)
@@ -73,3 +75,7 @@ fmt.Printf("10だよ!")
 参考 [Go言語 - forループによる繰り返し処理 - 覚えたら書く](https://blog.y-yuki.net/entry/2017/05/06/000000)
 
 また他の言語をやり出したら追記します。
+
+
+続き:[正直..do whileっている?](https://blog.saladbowl.work/blog/2021/01/need-do-while-q/)
+
