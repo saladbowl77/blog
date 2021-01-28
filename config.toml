@@ -1,7 +1,11 @@
 baseURL = "/"
-languageCode = "ja-ja"
+languageCode = "ja-jp"
+languageLang = "ja"
+isCJKLanguage = true
 title = "さらいふ"
 
 pygmentsUseClasses = true
 pygmentsCodefences = true
 googleAnalytics = "UA-163146016-3"
+
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
