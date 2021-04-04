@@ -1,7 +1,8 @@
 backend:
   name: github
   repo:  saladbowl77/blog
-locale: 'ja'
+locale: 'ja' #日本語対応
+local_backend: true # ローカルサーバーに対応させる設定
 
 media_folder: "static/images"
 
