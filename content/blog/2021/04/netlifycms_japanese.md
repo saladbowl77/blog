@@ -12,6 +12,12 @@ card: summary_large_image
 NetlifyCMSで本文を入力している時なぜか文字が戻ったりして正しく入力できないということがありませんか？
 その対処法です
 
+```bash
+/static/admin/config.toml
+```
+
+の部分にある
+
 ```toml
 {label: "本文", name: "body", widget: "markdown"}
 
@@ -24,4 +30,5 @@ NetlifyCMSで本文を入力している時なぜか文字が戻ったりして�
 ```
 
 に変えるだけです。
+そう、markdownにしているとバグるようです。
 ただし、プレビュー画面ではMDで表示されないので注意
