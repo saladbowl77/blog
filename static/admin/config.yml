@@ -22,5 +22,5 @@ collections:
       - {label: "公開日", name: "date", widget: "datetime"}
       - {label: "あらすじ", name: "description", widget: "string"}
       - {label: "タグ", name: "tags", widget: "list"}
-      - {label: "本文", name: "body", widget: "markdown"}
+      - {label: "本文", name: "body", widget: "text"}
       - {label: "TwitterCard", name: "card", widget: "select", options: ["summary", "summary_large_image"]}
