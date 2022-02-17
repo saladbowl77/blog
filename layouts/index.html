@@ -6,18 +6,14 @@
       {{ range sort .Site.RegularPages.ByDate.Reverse }}
       <div class="blog_link">
         <a href="{{ .Permalink }}">
-          <picture>
-            <source srcset="{{ .File.Dir }}{{ .File.BaseFileName }}-t.webp" alt="{{ .Title }}のサムネイル" type="image/webp">
-            <img src="{{ .File.Dir }}{{ .File.BaseFileName }}-t.png" alt="{{ .Title }}のサムネイル">
-          </picture>
+          <p class="tags">
+            {{ if .Params.tags }}
+            {{ partial "tag_top" .Params.tags }}
+            {{ end }}
+          </p>
           <h3>{{ .Title }}{{ partial "taxonomies_count" . }}</h3>
           <p class="date">{{ .Date.Format "2006 1/2" }}</p>
         </a>
-          <p class="tags">
-            {{ if .Params.tags }}
-            {{ partial "tags" .Params.tags }}
-            {{ end }}
-          </p>
       </div>
     {{ end }}
     </div>

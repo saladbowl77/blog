@@ -1,9 +1,19 @@
-{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ $related := .Site.RegularPages.Related . | first 4 }}
 {{ with $related }}
-<h3>Similar articles:</h3>
-<ul>
-	{{ range . }}
-	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-	{{ end }}
-</ul>
+    <h3>おすすめ記事</h3>
+    <section id="relatedWrap">
+        {{ range . }}
+        <div class="blog_link">
+			<a href="{{ .Permalink }}">
+				<p class="tags">
+				{{ if .Params.tags }}
+				{{ partial "tag_top" .Params.tags }}
+				{{ end }}
+				</p>
+				<h3>{{ .Title }}{{ partial "taxonomies_count" . }}</h3>
+				<p class="date">{{ .Date.Format "2006 1/2" }}</p>
+			</a>
+		</div>
+        {{ end }}
+    </section>
 {{ end }}

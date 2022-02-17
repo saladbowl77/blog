@@ -4,7 +4,7 @@
   <div class="container">
     <div id="title_data">
       <div id="title_text">
-			  <h1>{{ .Title }}</h1>
+        <h1>{{ .Title }}</h1>
         <p id="upload_date" class="icon icon-clock">投稿日:{{ .Date.Format "2006 1/2" }}</p>
         <p id="tags" class="icon icon-tags">タグ:
         <span>
@@ -15,8 +15,8 @@
         </p>
       </div>
       <picture>
-       <source srcset="../{{ .File.BaseFileName }}-t.webp" type="image/webp">
-       <img src="../{{ .File.BaseFileName }}-t.png" alt="">
+        <source srcset="../{{ .File.BaseFileName }}-t.webp" type="image/webp">
+        <img src="../{{ .File.BaseFileName }}-t.png" alt="">
       </picture>
     </div>
     {{if not .Date.IsZero }}<h2 class="subtitle is-6"></h2>{{ end }}
@@ -30,10 +30,10 @@
       {{ end }}
     </div>
     {{ partial "writer" . }}
+    {{ partial "related" . }}
   </div>
 </main>
 {{ if (and (.Site.Params.Info.codeCopy) (findRE "<pre" .Content 1)) }}
     <script src="/js/copycode.js"></script>
 {{ end }}
-{{ partial "disqus" . }}
 {{ partial "footer" . }}

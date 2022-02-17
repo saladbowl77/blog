@@ -3,9 +3,36 @@ languageCode = "ja-jp"
 languageLang = "ja"
 isCJKLanguage = true
 title = "さらいふ"
+timezone = "Asia/Tokyo"
 
 pygmentsUseClasses = true
 pygmentsCodefences = true
 googleAnalytics = "UA-163146016-3"
 
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[related]
+  includeNewer = false
+  threshold = 80
+  toLower = false
+[[related.indices]]
+  name = 'tags'
+  weight = 60
+[[related.indices]]
+  name = 'date'
+  weight = 50
+[[related.indices]]
+  name = 'imgUrl'
+  weight = 30

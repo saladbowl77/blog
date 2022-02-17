@@ -1,1 +1,7 @@
-{{ template "index.html" . }}
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<h1>サイト内のタグ一覧</h1>
+{{ range .Site.Taxonomies.tags.ByCount }}
+<li><a href="{{ "/tags/" | relURL }}{{ .Name | urlize }}">{{ .Name }}({{ .Count }})</a></li>
+{{ end }}
+{{ partial "footer" . }}
