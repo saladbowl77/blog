@@ -4,9 +4,9 @@ slug: netlifycms_japanese
 date: 2021-04-04T14:39:06.439Z
 description: NetlifyCMSで日本語を入力すると文字がロールバックしたりするという場合の対処法！
 tags:
-  - "#Netlify"
-  - "#NetlifyCMS"
-  - "#CMS"
+  - "Netlify"
+  - "NetlifyCMS"
+  - "CMS"
 card: summary_large_image
 ---
 NetlifyCMSで本文を入力している時なぜか文字が戻ったりして正しく入力できないということがありませんか？

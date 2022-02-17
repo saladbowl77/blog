@@ -1,0 +1,22 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<main class="section">
+    <div class="container">
+        <div id="blog_list">
+            {{ range .Pages.ByPublishDate.Reverse }}
+            <div class="blog_link">
+                <a href="{{ .Permalink }}">
+                    <p class="tags">
+                        {{ if .Params.tags }}
+                        {{ partial "tag_top" .Params.tags }}
+                        {{ end }}
+                    </p>
+                    <h3>{{ .Title }}{{ partial "taxonomies_count" . }}</h3>
+                    <p class="date">{{ .Date.Format "2006 1/2" }}</p>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</main>
+{{ partial "footer" . }}

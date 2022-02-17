@@ -7,9 +7,6 @@ timezone = "Asia/Tokyo"
 
 pygmentsUseClasses = true
 pygmentsCodefences = true
-googleAnalytics = "UA-163146016-3"
-
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

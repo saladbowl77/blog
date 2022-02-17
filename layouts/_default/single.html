@@ -14,10 +14,6 @@
         </span>
         </p>
       </div>
-      <picture>
-        <source srcset="../{{ .File.BaseFileName }}-t.webp" type="image/webp">
-        <img src="../{{ .File.BaseFileName }}-t.png" alt="">
-      </picture>
     </div>
     {{if not .Date.IsZero }}<h2 class="subtitle is-6"></h2>{{ end }}
     {{ if and (.Site.Params.Info.adsense) (.Params.adsenseTop) }}
