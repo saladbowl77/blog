@@ -19,6 +19,7 @@ main.moved {transition: all 1s; opacity: 0;}
   margin: 10px;
   max-height: 300px;
 }
+.blog_link .adsbygoogle {width: calc(100% - 10px); height: 300px;}
 section#relatedWrap {display: flex; flex-wrap: wrap; justify-content:space-between;}
 section#relatedWrap .blog_link {width: calc(25% - 10px); margin: 10px 5px; padding: 0;}
 .blog_link a h3,
