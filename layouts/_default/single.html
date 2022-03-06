@@ -9,7 +9,9 @@
         <p id="tags" class="icon icon-tags">タグ:
         <span>
           {{ if .Params.tags }}
-          {{ partial "tags" .Params.tags }}
+            {{ range .Params.tags }}
+              <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/">#{{ . }}</a>
+            {{ end }}
           {{ end }}
         </span>
         </p>

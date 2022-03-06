@@ -31,17 +31,15 @@ section#relatedWrap .blog_link {width: calc(25% - 10px); min-width: 250px; margi
 .blog_link p.date::before {content: '更新日:';}
 .blog_link .tags {background-color: #74c97b; width: fit-content; padding: 0 5px; border-radius: 0 0 2px 0;}
 
-#tags a {color: #242424;}
+#tags span a {color: #242424; text-decoration: underline;}
 #blog_main h2, #writer h2 {border-bottom: solid 2px #909090; font-size: 1.3rem; font-weight: 600; margin: 7px 0;}
-#blog_main h3 {position: relative; font-size: 1.2rem; font-weight: blod; margin: 5px 2px; padding-left: 5px;}
-#blog_main h3::before {content: ''; position: absolute; background-color: #909090;
-  top: 50%; left: -1px;
-  display: inline-block;
-  width: 5px; height: 2px;}
+#blog_main h3 {position: relative; font-size: 1.2rem; font-weight: blod; margin: 5px 2px; padding-left: 10px;}
+#blog_main h3::before {content: ''; position: absolute; background-color: #909090; top: 50%; left: 0px; display: inline-block; width: 5px; height: 2px;}
 #title_data img {width: 100%; margin: 0 auto; max-width: 600px;}
 #title_text h1 {font-size: 1.45rem; font-weight: 600;}
 #title_text p{display: inline-block;}
 #blog_main p {font-size: 1rem; letter-spacing: 0.05rem; line-height: 1.5em; margin: 10px 0;}
+#blog_main p a {color: #242424; text-decoration: underline; margin: 0 5px;}
 #blog_main li {margin-left: 20px;}
 #blog_main pre {padding: 15px; width: 100%; border-radius: 10px; overflow: scroll;}
 

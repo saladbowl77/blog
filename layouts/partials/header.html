@@ -38,7 +38,7 @@
   {{- end -}}
 '>
 <meta name="twitter:description" content="さらだぼぉるのブログさらいふです！プログラミングなどの小話を投稿していきます。">
-<meta name="Keywords" content="{{- if .IsPage -}}{{ .Params.tags }}{{- end -}}プログラミング, さらだぼぉる, ブログ, 技術ブログ, HTML, html, CSS, css, JavaScript, javascript">
+<meta name="Keywords" content="{{- if .IsPage -}}{{ range .Params.tags }}{{ . }},{{ end }}{{- end -}}プログラミング, さらだぼぉる, ブログ, 技術ブログ, HTML, html, CSS, css, JavaScript, javascript">
 <meta name="description" content="さらだぼぉるのブログさらいふです！プログラミングなどの小話を投稿していきます。">
 <meta property='og:image' content='https://blog.saladbowl.work{{ if .Params.imgUrl }}{{ .Params.imgUrl }}{{else}}{ .File.Dir }}{{ .File.BaseFileName }}-t.png{{end}}'>
 {{- $dateFormat := "2006-01-02T15:04:05Z07:00" -}}
