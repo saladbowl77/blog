@@ -38,9 +38,9 @@
   {{- end -}}
 '>
 <meta name="twitter:description" content="さらだぼぉるのブログさらいふです！プログラミングなどの小話を投稿していきます。">
-<meta name="Keywords" content="プログラミング, さらだぼぉる, ブログ, 技術ブログ, HTML, html, CSS, css, JavaScript, javascript">
+<meta name="Keywords" content="{{- if .IsPage -}}{{ .Params.tags }}{{- end -}}プログラミング, さらだぼぉる, ブログ, 技術ブログ, HTML, html, CSS, css, JavaScript, javascript">
 <meta name="description" content="さらだぼぉるのブログさらいふです！プログラミングなどの小話を投稿していきます。">
-<meta property='og:image' content='https://blog.saladbowl.work/{{ .File.Dir }}{{ .File.BaseFileName }}-t.png'>
+<meta property='og:image' content='https://blog.saladbowl.work{{{- if .IsPage -}}{{ .Params.imgUrl }}{{- else -}}{ .File.Dir }}{{ .File.BaseFileName }}-t.png{{end}}'>
 {{- $dateFormat := "2006-01-02T15:04:05Z07:00" -}}
 {{- if .IsPage -}}
   {{- if not .PublishDate.IsZero -}}
@@ -61,7 +61,7 @@
     <meta property='og:updated_time' content='{{ .Site.LastChange.Format $dateFormat }}'/>
   {{- end -}}
 {{- end -}}
-<meta name='twitter:card' content='summary_large_image'>
+<meta name='twitter:card' content='{{- if .IsPage -}}{{ .Params.card }}{{- else -}}summary_large_image{{- end -}}'>
 <meta name='twitter:site' content='@saladbowl_sub'>
 <meta name='twitter:creator' content='@saladbowl_sub'>
 {{- partial "analytics" . -}}
