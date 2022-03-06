@@ -18,8 +18,8 @@ collections:
     slug: '{{fields.slug}}'
     fields:
       - {label: "タイトル", name: "title", widget: "string"}
-      - {label: "url名", name: "slug", widget: "string", default: "default-slug"}
-      - {label: "公開日", name: "date", widget: "datetime"}
+      - {label: "url名", name: "slug", widget: "string"}
+      - {label: "PNG画像",name: "imgUrl", widget: "image", default: "/images/default.JPG", media_folder: "/static/images/", public_folder : "/images/"}
       - {label: "あらすじ", name: "description", widget: "string"}
       - {label: "タグ", name: "tags", widget: "list"}
       - {label: "本文", name: "body", widget: "text"}
