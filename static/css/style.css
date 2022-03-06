@@ -41,7 +41,7 @@ section#relatedWrap .blog_link {width: calc(25% - 10px); min-width: 250px; margi
 #title_data img {width: 100%; margin: 0 auto; max-width: 600px;}
 #title_text h1 {font-size: 1.45rem; font-weight: 600;}
 #title_text p{display: inline-block;}
-#blog_main p {font-size: 1rem; letter-spacing: 0.05rem; line-height: 1.15rem; margin: 10px 0;}
+#blog_main p {font-size: 1rem; letter-spacing: 0.05rem; line-height: 1.5em; margin: 10px 0;}
 #blog_main li {margin-left: 20px;}
 #blog_main pre {padding: 15px; width: 100%; border-radius: 10px; overflow: scroll;}
 
