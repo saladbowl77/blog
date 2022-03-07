@@ -3,14 +3,14 @@ title: shigovhackという滋賀県と甲賀市主催のハッカソンに参加
 slug: shigovhack2022
 date: 2022-03-06T05:07:41.629Z
 imgUrl: /images/20220306-shigovhack.png
-description: 昨日、3月6日にshigovhackというハッカソンが開催されました。   そのレポートをお伝えします!
+description: 3月5日にshigovhackというハッカソンが開催されました。そのレポートをお伝えします!
 tags:
   - Salad's Memo
   - ハッカソン
   - レポート
 card: summary_large_image
 ---
-昨日、3月6日にshigovhackというハッカソンが開催されました。  
+先日、3月5日にshigovhackというハッカソンが開催されました。  
 そのレポートをお伝えします!
 
 なおここに掲載されている情報は中間報告で報告した内容のみとなりそれ以上の情報公開は致しません。サービスがリリースされ次第詳細も追記します。
