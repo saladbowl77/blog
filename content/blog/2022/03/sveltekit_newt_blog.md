@@ -256,7 +256,7 @@ client
 ```
 ここでは単純にblogContentsに入っている内容を読み込んでループさせています。今回はブログの内容を"blog/id"という形で設定しました。
 
-### ブログ記事ページの作成([_id.svelte]の作成)
+### ブログ記事ページの作成([_id].svelteの作成)
 今回は先述した通りblog/idという形で記事を表示します。  
 Svelteでは[_id].svelteといった形で値を受け渡しすることができます。  
 今回は簡単にするために"/src/routes/"内にblogというディレクトリを作成し、その中に[_id].svelteを作成します。
@@ -308,12 +308,15 @@ Svelteでは[_id].svelteといった形で値を受け渡しすることがで�
 	<meta property="og:description" content="{blogContent.summary}" />
 </svelte:head>
 
-<h1>{blogContent.blogTitle}</h1>
-<p>{blogContent.postDatetime}</p>
+<div id="blogTitleWrap">
+    <h1>{blogContent.blogTitle}</h1>
+    <p>{blogContent.postDatetime}</p>
 
-{#each blogTags as tag}
-    #{tag}
-{/each}
+    {#each blogTags as tag}
+        #{tag}
+    {/each}
+</div>
+
 
 <section>
     {@html blogContent.text}
@@ -358,27 +361,83 @@ let blogTags = [];
 	<meta property="og:description" content="{blogContent.summary}" />
 </svelte:head>
 
-<h1>{blogContent.blogTitle}</h1>
-<p>{blogContent.postDatetime}</p>
+<div id="blogTitleWrap">
+    <h1>{blogContent.blogTitle}</h1>
+    <p>{blogContent.postDatetime}</p>
 
-{#each blogTags as tag}
-    #{tag}
-{/each}
+    {#each blogTags as tag}
+        #{tag}
+    {/each}
+</div>
+<section>
+    {@html blogContent.text}
+</section>
 ```
 
-ここはAPIから取得してきたデータを入れています。ただそれだけです。
+ここはAPIから取得してきたデータを入れています。ただそれだけです。  
+また、ブログの記事内はHTMLタグで書かれているため、@htmlを頭につけます。こうすることでサニタイズ処理がされなくなります。
 
 
 ## 完成
 以上で完成です。お疲れ様でした。  
 今回作成したサイトは以下のURLから確認することができます。  
-構成はSvelte Kit + Newt + Netlifyです。
+構成はSvelte Kit + Newt + Vercelです。
 
-making
+[デモ](https://newt-blog-test.vercel.app/blog/62271edffa6d8a001832685b)
 
 ## CSSコピペ用
 ```css
+html,
+body, header, main, footer, section, div,
+h1, h2, h3, h4, h5, h6,
+p, a,
+ul, ol, li {margin: 0; padding: 0; font-family: noto sans jp,sans-serif;}
 
-making
+h1, h2, h3, h4, h5, h6,
+p, a {
+	line-height: 1.5em;
+}
+
+img {
+	width: 100%;
+	max-width: 600px;
+	display: block;
+	margin: 0 auto;
+}
+
+header, main {
+  display: block;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+header {
+  width: 90%;
+  padding: 5px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 .5rem 2rem rgba(0,0,0,.12);
+}
+header h1 {
+  font-size: 1.4rem;
+}
+header h1 a {color: #121212; text-decoration: none;}
+main {width: 90%;}
+
+/* index.svelte */
+ul li {
+  list-style: none;
+}
+a {
+  margin: 12px 0px;
+  display: block;
+  color: #2580c3;
+}
+
+/* [_id].svelte */
+div#blogTitleWrap{
+    margin: 0px 0 10px 0;
+    border-bottom: 1px solid #121212;
+    padding: 10px 0;
+}
 
 ```
