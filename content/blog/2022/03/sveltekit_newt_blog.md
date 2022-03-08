@@ -17,13 +17,15 @@ card: summary_large_image
 > SvelteKitは、あらゆる規模のWebアプリケーションを構築するためのフレームワークで、美しい開発体験と柔軟なファイルシステムベースのルーティングが特徴です。
 > SvelteKitは、シングルページアプリケーションとは異なり、SEO、プログレッシブエンハンスメント、初期ロード体験に妥協はありません。しかし、従来のサーバーレンダリングのアプリとは異なり、ナビゲーションは瞬時に行われるため、アプリのような感覚で利用することが可能です。
 
-[SvelteKitHP(https://kit.svelte.dev/)より引用し翻訳](https://kit.svelte.dev/)
+[SvelteKitHP](https://kit.svelte.dev/)より引用し翻訳
 
 ### Newtとは
 ![HPスクリーンショット](/images/SvelteKit_Newt_Blog/SvelteKit_Newt_Blog_1.png)
-> 「Newt」は、APIベースでコンテンツ管理を行うことができるヘッドレスCMSです。Appを使って柔軟に管理画面を構築していくことによって、より快適で新しいコンテンツ管理体験を実現しています。サービススタート時は無料プランを提供、データ転送量や管理機能を強化した有料プランを準備中です。
+>  「Newt」は、APIベースでコンテンツ管理を行うことができるヘッドレスCMSです。Appを使って柔軟に管理画面を構築していくことによって、より快適で新しいコンテンツ管理体験を実現しています。サービススタート時は無料プランを提供、データ転送量や管理機能を強化した有料プランを準備中です。
 
-[Newtプレスリリースより引用](https://prtimes.jp/main/html/rd/p/000000002.000095676.html)
+[Newtプレスリリース](https://prtimes.jp/main/html/rd/p/000000002.000095676.html)より引用
+
+また無料枠が大きくデータ転送料は100FB/月までで、メンバー数、モデル数(API数)、コンテンツ数共に無制限となっています。メディアは1メディア当たり1メディアあたり50MBまでとのこと。
 
 ## Newtの導入
 ### アカウント登録
@@ -133,3 +135,250 @@ APIキーをクリックし
 ...をクリックし作成をクリックします。
 
 生成されたトークンは後ほど使うのでコピーして何処かにメモをしておきましょう。
+
+## SvelteKitでの実装
+SvelteKitはNodejsが必要です。
+
+### SvelteKitのインストール
+npmがインストールされていれば以下のコマンドで一発です。
+
+```shell
+npm init svelte@next my-app
+cd my-app
+npm install
+npm run dev
+```
+
+とりあえず、テンプレートはdemo appにしておいてください。  
+最終的にほぼ全て消されますが...
+```shell
+? Which Svelte app template? › - Use arrow-keys. Return to submit.
+❯   SvelteKit demo app
+```
+
+### ブログ一覧の作成(index.svelteの編集)
+とりあえずここは記事一覧のページにします。  
+なお、デザインに関しては最後にまとめてあるので参考にしたい方はそちらを参考にしてください。
+
+まず記事を取得する方法です。  
+ありがたいことにJavaScript SDKが配布されているのでそちらを使用します。
+
+```shell
+npm install newt-client-js
+```
+
+これで導入は完了です。
+
+それではindex.svelteを編集していきます。  
+とりあえず完成形を掲載し部分ごとに解説していきます。
+
+```html
+<script>
+	import { createClient } from 'newt-client-js';
+
+	const client = createClient({
+		spaceUid: 'YOUR_SPACE_UID',
+		token: 'YOUR_CDN_API_TOKEN',
+		apiType: 'cdn'
+	});
+	let blogContents = [];
+	client
+		.getContents({
+			appUid: 'YOUR_APP_UID',
+			modelUid: 'YOUR_MODEL_UID'
+		})
+		.then((contents) => {
+			blogContents = contents.items;
+			console.log(blogContents);
+			blogContents = blogContents;
+		})
+		.catch((err) => console.log(err));
+</script>
+
+<svelte:head>
+	<title>トップページ - テストブログ</title>
+</svelte:head>
+
+<section>
+	{#each blogContents as content}
+		<li>
+			<a href="/blog/{content._id}">
+				{content.blogTitle}
+			</a>
+		</li>
+	{/each}
+</section>
+```
+
+#### script部分の解説
+```js
+import { createClient } from 'newt-client-js';
+```
+
+1行目でSDKをインポートしています。
+
+```js
+const client = createClient({
+	spaceUid: 'YOUR_SPACE_UID',
+	token: 'YOUR_CDN_API_TOKEN',
+	apiType: 'cdn'
+});
+```
+
+次に取得したいスペースの認証をします。
+
+```js
+let blogContents = [];
+client
+	.getContents({
+		appUid: 'YOUR_APP_UID',
+		modelUid: 'YOUR_MODEL_UID'
+	})
+	.then((contents) => {
+		blogContents = contents.items;
+		console.log(blogContents);
+	})
+	.catch((err) => console.log(err));
+```
+
+ここでスペース内のAppのモデルに入っている一覧を取得します。. getContentsのsを忘れずに！
+その後通信が成功した場合変数"blogContents"に値が入ります。
+
+#### html部分の解説
+```html
+{#each blogContents as content}
+	<li>
+		<a href="/blog/{content._id}">
+			{content.blogTitle}
+		</a>
+	</li>
+{/each}
+```
+ここでは単純にblogContentsに入っている内容を読み込んでループさせています。今回はブログの内容を"blog/id"という形で設定しました。
+
+### ブログ記事ページの作成([_id.svelte]の作成)
+今回は先述した通りblog/idという形で記事を表示します。  
+Svelteでは[_id].svelteといった形で値を受け渡しすることができます。  
+今回は簡単にするために"/src/routes/"内にblogというディレクトリを作成し、その中に[_id].svelteを作成します。
+
+
+```html
+<script context="module">
+    export async function load({ params }) {
+        console.log(params._id)
+        // TODOの取得
+        return {
+            props: { blogID: params._id }
+        };
+    }
+</script>
+
+<script>
+    import { createClient } from 'newt-client-js';
+    export let blogID;
+    let blogContent = {
+        "blogTitle" : "",
+        "postDatetime" : "",
+        "text" : ""
+    };
+    let blogTags = [];
+
+	const client = createClient({
+		spaceUid: 'YOUR_SPACE_UID',
+		token: 'YOUR_CDN_API_TOKEN',
+		apiType: 'cdn'
+	});
+	client
+		.getContent({
+			appUid: 'YOUR_APP_UID',
+			modelUid: 'YOUR_MODEL_UID'
+            		contentId: blogID
+        })
+        .then((content) => {
+            blogContent = content;
+            blogTags = blogContent.tags.split(',');
+            blogTags = blogTags;
+            console.log(blogContent)
+        })
+        .catch((err) => console.log(err));
+</script>
+
+<svelte:head>
+	<title>{blogContent.blogTitle} - テストブログ</title>
+	<meta property="og:description" content="{blogContent.summary}" />
+</svelte:head>
+
+<h1>{blogContent.blogTitle}</h1>
+<p>{blogContent.postDatetime}</p>
+
+{#each blogTags as tag}
+    #{tag}
+{/each}
+
+<section>
+    {@html blogContent.text}
+</section>
+```
+
+script の前に```<script context="module">```というものがあります。  
+これは[_id]内に当てはまる文字列を取得するするためのコードです。
+
+```js
+let blogContent = {
+    "blogTitle" : "",
+    "postDatetime" : "",
+    "text" : ""
+};
+let blogTags = [];
+```
+
+そしてブログのコンテンツなどを入れる変数を宣言しておきます。あらかじめ{}内に書いておくことでUnderfindと表示されることを防ぎます。
+
+中盤のAPIを接続する部分等は基本的に先ほどと同じです。  
+しかし先ほどはcontent"s"だったのが今回はcontentになっています。また、新しく取得するcontentのIDも設定しています。
+
+ここで少しポイント。  
+タグを作るときに配列を入力するのがフィードの設定になかったのでテキストにしました。それをループさせるために配列に変えるのですが、ただ.split()をするだけではレンダリングがされません。  
+そのような時は以下のコードのように同じ変数をもう一度宣言します。  
+
+```js
+.then((content) => {
+    blogContent = content;
+    blogTags = blogContent.tags.split(',');
+    blogTags = blogTags;
+    console.log(blogContent)
+})
+```
+
+このようにすることでもう一度レンダリングをすることができます。
+
+```html
+<svelte:head>
+	<title>{blogContent.blogTitle} - テストブログ</title>
+	<meta property="og:description" content="{blogContent.summary}" />
+</svelte:head>
+
+<h1>{blogContent.blogTitle}</h1>
+<p>{blogContent.postDatetime}</p>
+
+{#each blogTags as tag}
+    #{tag}
+{/each}
+```
+
+ここはAPIから取得してきたデータを入れています。ただそれだけです。
+
+
+## 完成
+以上で完成です。お疲れ様でした。  
+今回作成したサイトは以下のURLから確認することができます。  
+構成はSvelte Kit + Newt + Netlifyです。
+
+making
+
+## CSSコピペ用
+```css
+
+making
+
+```
