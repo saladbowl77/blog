@@ -405,7 +405,7 @@ let blogTags = [];
 今回作成したサイトは以下のURLから確認することができます。  
 構成はSvelte Kit + Newt + Vercelです。
 
-[デモ](https://newt-blog-test.vercel.app/blog/62271edffa6d8a001832685b)
+[デモ](https://newt-blog-test.vercel.app/)
 
 また今回テストアプリ制作中などにバグがありTwitterで呟いたところ早急に対応していただけてとてもありがたかったです。  
 今後CMS使う場面があり複数人で更新するなどあればだいぶ候補に上がるのではないでしょうか。  
