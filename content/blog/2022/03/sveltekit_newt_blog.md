@@ -2,7 +2,7 @@
 draft: true
 title: SvelteKit + Newt で爆速ブログ開発
 slug: SvelteKit_Newt_Blog
-imgUrl: /images/20220306-shigovhack.png
+imgUrl: /images/default.png
 date: 2022-03-08T05:07:41.629Z
 description: Svelte KitとNewtという新しいCMSを使って爆速でBlogを作成します。
 tags:
@@ -168,11 +168,11 @@ npmがインストールされていれば以下のコマンドで一発です�
 npm init svelte@next my-app
 cd my-app
 npm install
-npm run dev
 ```
 
 とりあえず、テンプレートはdemo appにしておいてください。  
 最終的にほぼ全て消されますが...
+
 ```shell
 ? Which Svelte app template? › - Use arrow-keys. Return to submit.
 ❯   SvelteKit demo app
@@ -280,7 +280,7 @@ client
 
 ### ブログ記事ページの作成([_id].svelteの作成)
 今回は先述した通りblog/idという形で記事を表示します。  
-Svelteでは[_id].svelteといった形で値を受け渡しすることができます。  
+Svelteでは[値].svelteといった形で値を受け渡しすることができます。  
 今回は簡単にするために"/src/routes/"内にblogというディレクトリを作成し、その中に[_id].svelteを作成します。
 
 
@@ -407,7 +407,11 @@ let blogTags = [];
 
 [デモ](https://newt-blog-test.vercel.app/blog/62271edffa6d8a001832685b)
 
-## CSSコピペ用
+また今回テストアプリ制作中などにバグがありTwitterで呟いたところ早急に対応していただけてとてもありがたかったです。  
+今後CMS使う場面があり複数人で更新するなどあればだいぶ候補に上がるのではないでしょうか。  
+ぜひ皆さんも使ってみてください！
+
+## おまけ CSSコピペ用
 ```css
 html,
 body, header, main, footer, section, div,
@@ -449,7 +453,7 @@ main {width: 90%;}
 ul li {
   list-style: none;
 }
-a {
+ul li a {
   margin: 12px 0px;
   display: block;
   color: #2580c3;
