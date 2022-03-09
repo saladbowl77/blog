@@ -1,8 +1,9 @@
 ---
+draft: true
 title: SvelteKit + Newt で爆速ブログ開発
 slug: SvelteKit_Newt_Blog
-date: 2022-03-08T05:07:41.629Z
 imgUrl: /images/20220306-shigovhack.png
+date: 2022-03-08T05:07:41.629Z
 description: Svelte KitとNewtという新しいCMSを使って爆速でBlogを作成します。
 tags:
   - Salad's Memo
@@ -10,7 +11,6 @@ tags:
   - Newt
   - CMS
 card: summary_large_image
-draft: true
 ---
 今回はSvelteKitとNewtを使って30分以内に爆速でブログを開発していきます。
 
@@ -49,9 +49,30 @@ draft: true
 - モデル
 - UID
 
-スペースというのはサイトを表します。  
-Appというのは投稿の種類を表します。  
-モデルというのは投稿の内容を表しています。  
+スペースとは
+
+> スペースとは、チームや個人に関わるあらゆるコンテンツを統合的に管理するためのものです。
+
+[Newt document スペース](https://www.newt.so/docs/space)より引用
+
+複数のサイトなどを運営する時このスペースというものを追加していきます。
+
+Appとは
+
+> Appとは、コンテンツやコンテンツの管理者を、その関連度の高さを元にひとまとまりにした「コンテンツ管理のユニット」です。
+
+[Newt document App](https://www.newt.so/docs/app)より引用
+
+ブログページや社員一覧などサイトのコンテンツを増やす時に追加します。
+
+モデルとは
+
+> モデルとは、コンテンツ管理の骨組みとなるものです。
+
+[Newt document モデル](https://www.newt.so/docs/model)より引用
+
+簡単に言うとブログなどの投稿内容を決めるものになります。
+
 UIDというのは上記の全てに自由に割り当てられるIDです。ただしこれは全てユニーク(重複しない)必要があります。
 
 テキストだけでは分かりにくいと思うので、実際に作ってみていきます。
