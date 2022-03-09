@@ -288,7 +288,6 @@ Svelteでは[値].svelteといった形で値を受け渡しすることがで�
 <script context="module">
     export async function load({ params }) {
         console.log(params._id)
-        // TODOの取得
         return {
             props: { blogID: params._id }
         };
