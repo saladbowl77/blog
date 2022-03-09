@@ -103,7 +103,7 @@ UIDは自分がわかりやすくかぶらないものを選んでください�
 ![App追加](/images/SvelteKit_Newt_Blog/SvelteKit_Newt_Blog_7.png)
 
 今回はApp名をBlogにUIDをblogに設定しました。  
-このUIDはのちに変更することができます。  
+このUIDは後に変更することができます。  
 また、Appアイコンには最近はやりの絵文字を使うことができます。
 
 ### モデルの作成
