@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: SvelteKit + Newt で爆速ブログ開発
 slug: SvelteKit_Newt_Blog
 imgUrl: /images/default.png
