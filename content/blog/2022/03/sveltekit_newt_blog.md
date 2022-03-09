@@ -10,6 +10,7 @@ tags:
   - Newt
   - CMS
 card: summary_large_image
+draft: true
 ---
 今回はSvelteKitとNewtを使って30分以内に爆速でブログを開発していきます。
 
