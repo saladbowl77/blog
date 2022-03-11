@@ -1,7 +1,7 @@
 ---
 title: UbuntuにPillowをインストールする方法
 slug: Ubuntu-install-pillow
-date: 2022-03-12T04:00:00.629Z
+date: 2022-03-11T03:00:00.629Z
 imgUrl: /images/default.png
 description: UbuntuにPillowをインストールする方法を紹介します。
 tags:
