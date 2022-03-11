@@ -12,7 +12,8 @@ card: summary
 ---
 UbuntuにPillowをインストールする方法。
 
-筆者環境  
+### 筆者環境
+
 OS : Ubuntu 20.04.4 LTS  
 PC : Radxa Rock3A
 
