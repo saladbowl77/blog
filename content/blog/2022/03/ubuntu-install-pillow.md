@@ -8,6 +8,7 @@ tags:
   - "#Salad's Memo"
   - Ubuntu
   - Python
+  - Python3
   - Pillow
 card: summary
 ---
