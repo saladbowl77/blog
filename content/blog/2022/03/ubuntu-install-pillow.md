@@ -5,7 +5,7 @@ date: 2022-03-11T03:00:00.629Z
 imgUrl: /images/default.png
 description: UbuntuにPillowをインストールする方法を紹介します。
 tags:
-  - "#Salad's Memo"
+  - Salad's Memo
   - Ubuntu
   - Python
   - Python3
