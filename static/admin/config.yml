@@ -19,6 +19,7 @@ collections:
     fields:
       - {label: "タイトル", name: "title", widget: "string"}
       - {label: "url名", name: "slug", widget: "string"}
+      - {label: "公開日", name: "date", widget: "datetime"}
       - {label: "PNG画像",name: "imgUrl", widget: "image", default: "/images/default.png", media_folder: "/static/images/", public_folder : "/images/"}
       - {label: "あらすじ", name: "description", widget: "string"}
       - {label: "タグ", name: "tags", widget: "list"}
