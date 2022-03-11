@@ -10,6 +10,7 @@ tags:
   - Python
   - Python3
   - Pillow
+  - Rock3A
 card: summary
 ---
 UbuntuにPillowをインストールする方法。
