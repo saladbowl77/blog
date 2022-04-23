@@ -226,3 +226,7 @@ E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or speci
 ```shell
 sudo apt install libgbm1 libnspr4 libnss3 xdg-utils libwayland-server0
 ```
+
+## 追記
+wgetでダウンロードしたもののインストール時に`dpkg`を使っているが、`gdebi`を使えば依存関係も解消してくれるそう。  
+是非お試しあれ。
