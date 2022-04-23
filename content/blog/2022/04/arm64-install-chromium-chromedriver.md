@@ -1,7 +1,7 @@
 ---
 title: arm64のubuntuにchromium, chromedriverを入れる方法
 slug: arm64-install-chromium-chromedriver
-date: 2022-04-23T02:58:47.911Z
+date: 2022-04-23T03:00:47.911Z
 imgUrl: /images/default.png
 description: "arm64系(RK3568)のsocでchromedriverを使おうとしたら戸惑ったのでメモ。  "
 tags:
@@ -202,7 +202,7 @@ Errors were encountered while processing:
 ```shell
 sudo apt install libgbm1
 etc...
-````
+```
 
 とすると、それらの中での依存関係で以下のエラーが出る。
 
