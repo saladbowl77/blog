@@ -1,6 +1,6 @@
 ---
 title: minecraftのサーバーを運営し始めた話
-slug: minecraft-start
+slug: minecraft-server
 date: 2022-05-23T09:57:32.321Z
 imgUrl: /images/default.png
 description: minecraftのサーバー運営を始めた話を簡単にまとめました。
@@ -36,8 +36,6 @@ Pluginはそのまま使用でき、マルチスレッドに対応というこ�
 将来的にはSBCをクラスタリングして負荷分散等もしたいと考えていますが、資金と規模的に現状はChiyogamiを使用しています。  
 tpsについては基本的に20~18程度。負荷がかかると12くらいまでは下がります。  
 他の鯖の平均tpsなどは知らないので比較はできませんが、10以下になることはないので個人的にはOKかと思ってます。(植物の成長等も止めてるので影響はあまりない。)
-
-
 
 ## Plugin datapackについて
 Pluginは基本的に自作(fork)のプラグインDisgotを使用しています。Disgotの特徴はDiscordとMinecraftをつなげることのできるプラグインです。  
