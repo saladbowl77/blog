@@ -75,8 +75,9 @@ info.menuItemIdでどれがクリックされたかを確認しています。
 	"name": "アドオン名",
 	"description": "アドオンの説明",
 	"version": "1.0",
-    "icons": {
-    },
+	"icons": {
+		本当はアイコン設定したほうがいいんだけども今回は作るのめんどくさいので割愛
+	},
 	"applications": {
 		"gecko": {
 			"id": "hogehoge@example.com"
