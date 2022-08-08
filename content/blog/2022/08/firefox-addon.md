@@ -147,7 +147,7 @@ Firefoxでここにアクセスしてください。一時的なアドオンを�
 
 そして新しく`moz.build`というファイルを生成します。僕も書き方はよく分からないので他のものと照らし合わせながら作りました。
 
-```
+```build
 DEFINES["MOZ_APP_VERSION"] = CONFIG["MOZ_APP_VERSION"]
 DEFINES["MOZ_APP_MAXVERSION"] = CONFIG["MOZ_APP_MAXVERSION"]
 
