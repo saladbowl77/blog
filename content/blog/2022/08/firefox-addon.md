@@ -6,6 +6,7 @@ imgUrl: /images/default.png
 description: Firefoxのアドオンを作って実際に組み込んでみた。
 tags:
   - Firefox
+  - salad's memo
 card: summary
 ---
 時は2022年。URLとサイトのタイトル取得に悩んでいる学生がいた...
@@ -17,8 +18,10 @@ card: summary
 
 ということで、アドオンを作っていきます。  
 アドオンを作る際は最低以下のものが必要になります。
+
 - manifest.json
 - JavaScriptファイル
+
 以上です。簡単でしょ?
 
 そして今回は以下のファイル構成で作成します。
