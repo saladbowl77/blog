@@ -88,12 +88,12 @@ info.menuItemIdでどれがクリックされたかを確認しています。
 		"clipboardWrite",
 		"menus",
         	"tabs"
-    ],
-    "background": {
+	],
+	"background": {
 		"scripts": [
 			"include.js"
 		]
-    },
+	},
 	"content_scripts": [
 		{
 			"matches": [
@@ -107,8 +107,6 @@ info.menuItemIdでどれがクリックされたかを確認しています。
 
 一番大切なのは、`permissions`ここです。  
 ここでしっかりと権限を与えないと使えません。しっかり`clipboardWrite`(クリップボードへのコピー)、`menus `(右クリックメニュー )、`tabs `(タブ情報へのアクセス権限)を与えてください。
-
-(このブログ書いているときに`<all_urls>`あるなら`content_scripts `いらないんじゃねと思った次第。)
 
 ## 実際に動作確認してみる。
 実際に動作確認してみます。  
@@ -177,4 +175,4 @@ with Files("**"):
 
 
 ということで今回はアドオンを作ってFloorpに組み込んでみました。  
-意外にも簡単にできたのでカスタマイズしたい人ぜひお取り組んでみては?
+意外にも簡単にできたのでカスタマイズしたい人ぜひ取り組んでみては?
